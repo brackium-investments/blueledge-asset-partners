@@ -8,7 +8,7 @@ const Header = () => {
   const pathname = usePathname();
 
   return (
-    <header className="h-[8rem] flex items-center justify-between px-[8rem] shadow-md font-geist-sans">
+    <header className="h-[8rem] flex items-center justify-between px-[8rem] border-b border-gray-200 font-geist-sans relative z-[90] ">
       <div className="flex items-center text-[3rem] font-bold font-geist-mono uppercase">
         <span className="">Beacon</span>
         <span className="text-secondary-1">Trades</span>
