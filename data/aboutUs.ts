@@ -21,12 +21,12 @@ export const aboutUsPaths: AboutUsPath[] = [
     text: "New office Amsterdam",
   },
   {
-    date: "February 2024",
+    date: "October 2024",
     year: 2024,
     text: "More than 22,000 members",
   },
   {
-    date: "October 2025",
+    date: "February 2025",
     year: 2025,
     text: "More than 500 workers",
   },
