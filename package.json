@@ -16,7 +16,8 @@
     "react-hook-form": "^7.57.0",
     "react-icons": "^5.5.0",
     "react-loader-spinner": "^6.1.6",
-    "react-toastify": "^11.0.5"
+    "react-toastify": "^11.0.5",
+    "react18-input-otp": "^1.1.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

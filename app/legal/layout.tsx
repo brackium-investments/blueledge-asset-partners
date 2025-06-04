@@ -1,3 +1,10 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Beacon Trades | Legal",
+  description: "Giving you the best off your investment",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{

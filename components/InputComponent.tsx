@@ -40,7 +40,7 @@ const InputComponent: React.FC<InputProps> = (props) => {
     return props.error &&
       props.error[props.name] &&
       props.error[props.name].message
-      ? "text-red border-red"
+      ? "text-red-700 border-red-700"
       : `${
           props.borderColor ? props.borderColor : "border-gray-500"
         }  text-color-black`;
@@ -66,7 +66,7 @@ const InputComponent: React.FC<InputProps> = (props) => {
     return props.error &&
       props.error[props.name] &&
       props.error[props.name].message ? (
-      <small className={`text-red pt-[0.5rem]`}>
+      <small className={`text-red-700 pt-[0.5rem]`}>
         {props.error[props.name].message}
       </small>
     ) : null;
