@@ -1,10 +1,8 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import formatAmount from "./formatAmount";
 
 export const registrationOption = {
-  name: {
-    required: "Name is required",
+  name: (req: boolean) => ({
+    required: req ? "Name is required" : req,
     minLength: {
       value: 3,
       message: "Name must have at least 3 characters",
@@ -17,14 +15,14 @@ export const registrationOption = {
     //   value: /^[A-Z][a-z]+\s[A-Z][a-z]+$/i,
     //   message: 'Full name is required',
     // },
-  },
-  email: {
-    required: "Email is required",
+  }),
+  email: (req: boolean) => ({
+    required: req ? "Email is required" : req,
     pattern: {
       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
       message: "Valid email address is required",
     },
-  },
+  }),
   password: {
     required: "Password is required",
     minLength: {
@@ -36,15 +34,15 @@ export const registrationOption = {
       message: "Password cannot be greater than 20 characters",
     },
   },
-  phoneNumber: {
-    required: "Phone number is required",
+  phoneNumber: (req: boolean) => ({
+    required: req ? "Phone number is required" : req,
     pattern: {
       value: /(?:\+?(\d{1,3}))?[\s.-]?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}/,
       message: "Valid phone number is required",
     },
-  },
-  address: {
-    required: "Address is required",
+  }),
+  address: (req: boolean) => ({
+    required: req ? "Address is required" : req,
     minLength: {
       value: 2,
       message: "Address name must have at least 2 characters",
@@ -53,8 +51,8 @@ export const registrationOption = {
       value: 150,
       message: "Address name cannot be greater than 150 characters",
     },
-  },
-  amountPaid: (min: any, max: any) => {
+  }),
+  amountPaid: (min: unknown, max: unknown) => {
     return {
       required: "Amount paid is required",
       min: {
