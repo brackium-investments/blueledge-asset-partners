@@ -1,19 +1,20 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { registrationOption } from "@/utils/inputValidator";
 import InputComponent from "../InputComponent";
 import { toastError, toastSuccess } from "@/utils/toastFuncs";
-// import { fileHandler } from "../utils/helper-functions";
-// import { useAppDispatch } from "@/hooks/customHook";
-// import { createInvestorDispatch } from "@/actions/investorAction";
-import { FallingLines } from "react-loader-spinner";
-// import noImg from "../assets/no-image-svgrepo-com.svg";
+import { useAppDispatch } from "@/hooks/state-hook";
+import { RotatingLines } from "react-loader-spinner";
 import { FaRegCircleCheck } from "react-icons/fa6";
 import { LuBadgeAlert } from "react-icons/lu";
 import { IoMdLock } from "react-icons/io";
-import { usePathname, useRouter } from "next/navigation";
-// import { registerInvestorDispatch } from "@/actions/investorActions";
+import { useRouter } from "next/navigation";
+import ProofImgComp from "../ProofOfImg";
+import noImg from "../../assets/no-img.svg";
+import { fileHandler } from "@/utils/fileHandler";
+import { registerInvestorDispatch } from "@/actions/investorActions";
 
 type FormData = {
   fullName: string;
@@ -21,16 +22,26 @@ type FormData = {
   address: string;
   phoneNumber: string;
   password: string;
-  confirmPassword: string;
+  ssn: string;
 };
 
 const RegisterForm = () => {
-  //   const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
   const router = useRouter();
-  const pathname = usePathname();
 
-  const [referralId, setReferralId] = useState<string>(pathname.split("/")[3]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const [stateIssuedIDImg, setStateIssuedIDImg] = useState<any>(noImg);
+  const [stateIssuedIDFileName, setStateIssuedIDFileName] =
+    useState<string>("");
+  const [stateIssuedIDImgObj, setStateIssuedIDImgObj] = useState<any>();
+  const [stateIssuedIDErr, setStateIssuedIDErr] = useState<boolean>(false);
+
+  const [driversLicenseImg, setDriversLicenseImg] = useState<any>(noImg);
+  const [driversLicenseFileName, setDriversLicenseFileName] =
+    useState<string>("");
+  const [driversLicenseImgObj, setDriversLicenseImgObj] = useState<any>();
+  const [driversLicenseErr, setDriversLicenseErr] = useState<boolean>(false);
 
   const {
     register,
@@ -44,7 +55,7 @@ const RegisterForm = () => {
       address: "",
       phoneNumber: "",
       password: "",
-      confirmPassword: "",
+      ssn: "",
     },
   });
 
@@ -55,40 +66,95 @@ const RegisterForm = () => {
       address: "",
       phoneNumber: "",
       password: "",
-      confirmPassword: "",
+      ssn: "",
     });
 
     router.push("/login");
+
+    setStateIssuedIDImg(noImg);
+    setStateIssuedIDImgObj(noImg);
+    setDriversLicenseImg(noImg);
+    setDriversLicenseImgObj(noImg);
+  };
+
+  const stateIssuedIDImgHandler = (e: { target: { files: any } }) => {
+    if (!e.target.files[0]) {
+      return;
+    }
+    if (e.target.files[0].type.includes("image")) {
+      setStateIssuedIDImg(fileHandler(e.target.files[0]));
+      setStateIssuedIDErr(false);
+    } else {
+      setStateIssuedIDImg(undefined);
+      setStateIssuedIDFileName(e.target.files[0].name);
+      setStateIssuedIDErr(false);
+    }
+
+    setStateIssuedIDImgObj(e.target.files[0]);
+  };
+
+  const driversLicenseImgHandler = (e: { target: { files: any } }) => {
+    if (!e.target.files[0]) {
+      return;
+    }
+    if (e.target.files[0].type.includes("image")) {
+      setDriversLicenseImg(fileHandler(e.target.files[0]));
+      setDriversLicenseErr(false);
+    } else {
+      setDriversLicenseImg(undefined);
+      setDriversLicenseFileName(e.target.files[0].name);
+      setDriversLicenseErr(false);
+    }
+    setDriversLicenseImgObj(e.target.files[0]);
   };
 
   const onSubmit: SubmitHandler<FormData> = (data) => {
+    if (stateIssuedIDImg === noImg && !stateIssuedIDFileName) {
+      setStateIssuedIDErr(true);
+      return;
+    } else {
+      setStateIssuedIDErr(false);
+    }
+    if (driversLicenseImg === noImg && !driversLicenseFileName) {
+      setDriversLicenseErr(true);
+      return;
+    } else {
+      setDriversLicenseErr(false);
+    }
+
     const formattedData = {
-      name: data.fullName,
+      fullname: data.fullName,
       email: data.email,
       address: data.address,
       phoneNumber: data.phoneNumber,
-      referralId: referralId,
       password: data.password,
-      passwordConfirm: data.confirmPassword,
+      ssn: data.ssn,
+      stateIssuedID: stateIssuedIDImgObj,
+      driversLicense: driversLicenseImgObj,
     };
-    // dispatch(
-    //   registerInvestorDispatch(
-    //     formattedData,
-    //     setIsLoading,
-    //     toastSuccess,
-    //     toastError,
-    //     <FaRegCircleCheck className="w-[2.3rem] h-[2.3rem] text-color-blue" />,
-    //     <LuBadgeAlert className="w-[2.3rem] h-[2.3rem] text-color-red" />,
-    //     resetForm
-    //   )
-    // );
+
+    console.log("Form Data:", formattedData);
+    dispatch(
+      registerInvestorDispatch(
+        formattedData,
+        setIsLoading,
+        toastSuccess,
+        toastError,
+        <FaRegCircleCheck className="w-[2.3rem] h-[2.3rem] text-color-blue" />,
+        <LuBadgeAlert className="w-[2.3rem] h-[2.3rem] text-color-red" />,
+        resetForm
+      )
+    );
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="w-full">
+      <p className="font-medium text-[2rem] mb-[1.5rem] text-secondary-1">
+        Personal Info
+      </p>
       <div className=" flex flex-wrap justify-between">
         <InputComponent
-          placeholder={"Joseph Rice"}
+          placeholder={"Enter your fullname"}
           type={"text"}
           register={register}
           error={errors}
@@ -99,7 +165,7 @@ const RegisterForm = () => {
           validation={registrationOption.name}
         />
         <InputComponent
-          placeholder={"jo@gmail.com"}
+          placeholder={"Enter your email"}
           type={"email"}
           register={register}
           error={errors}
@@ -110,7 +176,7 @@ const RegisterForm = () => {
           validation={registrationOption.email}
         />
         <InputComponent
-          placeholder={"2104-2216-9139"}
+          placeholder={"Enter your phone number"}
           type={"text"}
           register={register}
           error={errors}
@@ -121,7 +187,7 @@ const RegisterForm = () => {
           validation={registrationOption.phoneNumber}
         />
         <InputComponent
-          placeholder={"Texas, USA"}
+          placeholder={"Enter your address"}
           type={"text"}
           register={register}
           error={errors}
@@ -131,23 +197,6 @@ const RegisterForm = () => {
           containerWidth="w-[45%] "
           validation={registrationOption.address}
         />
-        {/* <div className="w-[45%] mb-[2rem]">
-          <label htmlFor="referral-id" className="mb-0">
-            Referral (Optional)
-          </label>
-          <input
-            type="text"
-            name="referral-id"
-            id="referral-id"
-            placeholder="Referral"
-            className="w-full p-[1rem] rounded-lg mt-[.5rem] focus:ring-0 focus:outline-none outline-none ring-0 border border-color-blue"
-            value={referralId}
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            onChange={(e: any) => {
-              setReferralId(e.target.value);
-            }}
-          />
-        </div> */}
         <InputComponent
           placeholder={"Password"}
           label="Password"
@@ -161,14 +210,39 @@ const RegisterForm = () => {
             <IoMdLock className="absolute w-[2.2rem] h-[2.2rem] top-[1rem] left-[1rem] text-black" />
           }
         />
+      </div>
+      <div className="mt-[3rem]">
+        <p className="font-medium text-[2rem] mb-[1.5rem] text-secondary-1">
+          KYC Info
+        </p>
+        <div className="w-full mt-[1rem] mb-[3rem] flex justify-between  ">
+          <ProofImgComp
+            name="State Issued ID"
+            img={stateIssuedIDImg}
+            fileName={stateIssuedIDFileName}
+            setFileName={setStateIssuedIDFileName}
+            setImg={stateIssuedIDImgHandler}
+            text="Please make sure to upload a very clear image."
+            err={stateIssuedIDErr}
+          />
+          <ProofImgComp
+            fileName={driversLicenseFileName}
+            setFileName={setDriversLicenseFileName}
+            name="Driver's License"
+            img={driversLicenseImg}
+            setImg={driversLicenseImgHandler}
+            text="Please make sure to upload a very clear image."
+            err={driversLicenseErr}
+          />
+        </div>
         <InputComponent
-          placeholder={"Confirm Password"}
-          label="Confirm Password"
+          placeholder={"XXX-XX-XXXX"}
+          label="Social Security Number (SSN)"
           type={"password"}
           register={register}
           error={errors}
-          name={"confirmPassword"}
-          validation={registrationOption.password}
+          name={"ssn"}
+          validation={registrationOption.ssn}
           containerWidth="w-[45%] "
           icon={
             <IoMdLock className="absolute w-[2.2rem] h-[2.2rem] top-[1rem] left-[1rem] text-black" />
@@ -180,7 +254,7 @@ const RegisterForm = () => {
         className={`mt-[3rem] py-[1rem] flex justify-center items-center bg-secondary-1 text-white w-full border border-secondary-1 rounded-lg transition-all duration-300 font-semibold  ease-in cursor-pointer  hover:shadow-xl `}
       >
         {isLoading ? (
-          <FallingLines height="20" width="20" color={"white"} visible={true} />
+          <RotatingLines width="25" strokeColor="white" />
         ) : (
           "Register"
         )}

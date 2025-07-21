@@ -10,13 +10,13 @@ const calculateExpirationTime = (expirationTime: any) => {
 // retrieves the stored token and re-calculates the expiration time..
 export const retrieveStoredToken = () => {
   if (typeof window !== "undefined") {
-    const storedToken = localStorage.getItem("investorToken");
+    const storedToken = localStorage.getItem("userToken");
     const storedExpirationTime = localStorage.getItem("expirationTime");
 
     const remainingTime = calculateExpirationTime(storedExpirationTime);
 
     if (remainingTime <= 6000) {
-      localStorage.removeItem("investorToken");
+      localStorage.removeItem("userToken");
       localStorage.removeItem("expirationTime");
       localStorage.removeItem("investorDetails");
       localStorage.removeItem("investments");

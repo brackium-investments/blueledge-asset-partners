@@ -2,7 +2,17 @@
 import { user } from "@/axios.config";
 
 export const registerInvestor = async (data: any) => {
-  return await user.post("/investors", data);
+  const formData = new FormData();
+  formData.append("fullname", data.fullname);
+  formData.append("email", data.email);
+  formData.append("address", data.address);
+  formData.append("phoneNumber", data.phoneNumber);
+  formData.append("password", data.password);
+  formData.append("ssn", data.ssn);
+  formData.append("files", data.stateIssuedID);
+  formData.append("files", data.driversLicense);
+
+  return await user.post(``, formData);
 };
 
 export const loginInvestor = async (data: any) => {
@@ -17,16 +27,8 @@ export const resetPasswordService = async (data: any, token: string) => {
   return await user.post(`/investors/reset-password/${token}`, data);
 };
 
-export const updateMyPassword = async (data: any, jwtToken: string) => {
-  return await user.patch("/investors/updateMyPassword", data, {
-    headers: {
-      Authorization: "Bearer " + jwtToken,
-    },
-  });
-};
-
 export const updateInfo = async (data: any, jwtToken: string) => {
-  return await user.patch(`/investors/updateMe`, data, {
+  return await user.patch(``, data, {
     headers: {
       Authorization: "Bearer " + jwtToken,
     },
@@ -49,11 +51,23 @@ export const updateInvestorProfileImg = async (
   imgFile: any
 ) => {
   const formData = new FormData();
-  formData.append("image", imgFile);
+  formData.append("file", imgFile);
 
-  return await user.patch(`/investors/update-profile-img`, formData, {
+  return await user.patch(`/update-image`, formData, {
     headers: {
       Authorization: "Bearer " + jwtToken,
     },
   });
+};
+
+export const updateInvestorPassword = async (data: any, token: string) => {
+  return await user.patch("update-password", data, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+
+export const contactUs = async (data: any) => {
+  return await user.post("contact-us", data);
 };

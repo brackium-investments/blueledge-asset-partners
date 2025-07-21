@@ -1,3 +1,7 @@
-export default function EditProfile() {
-  return <main>edit profile</main>;
+"use client";
+import React from "react";
+import EditProfileComp from "@/components/dashboard/EditProfile/EditProfileComp";
+
+export default function editProfile() {
+  return <EditProfileComp />;
 }

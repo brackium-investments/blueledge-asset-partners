@@ -4,25 +4,24 @@ import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { registrationOption } from "@/utils/inputValidator";
 import InputComponent from "@/components/InputComponent";
-// import { useAppDispatch } from "@/hooks/customHook";
-// import { resetPasswordDispatch } from '@/actions/investorAction';
+import { useAppDispatch } from "@/hooks/state-hook";
 import { IoMdLock } from "react-icons/io";
-import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { toastError, toastSuccess } from "@/utils/toastFuncs";
 import { FaRegCircleCheck } from "react-icons/fa6";
 import { LuBadgeAlert } from "react-icons/lu";
-import { FallingLines } from "react-loader-spinner";
-// import { resetPasswordDispatch } from "@/actions/investorActions";
+import { RotatingLines } from "react-loader-spinner";
+import { useAppSelector } from "@/hooks/state-hook";
+import { resetPasswordDispatch } from "@/actions/authAction";
 
 const ResetPassword = () => {
-  const pathname = usePathname();
-  //   const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
+
+  const { otp } = useAppSelector((state) => state.auth);
   const router = useRouter();
 
   type FormData = {
     password: string;
-    passwordConfirm: string;
   };
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -35,32 +34,32 @@ const ResetPassword = () => {
   } = useForm<FormData>({
     defaultValues: {
       password: "",
-      passwordConfirm: "",
     },
   });
 
   const resetForm = () => {
     reset({
       password: "",
-      passwordConfirm: "",
     });
     router.replace(`/login`);
   };
 
   const onSubmit: SubmitHandler<FormData> = (data) => {
-    console.log(data);
-    // dispatch(
-    //   resetPasswordDispatch(
-    //     data,
-    //     pathname.split("/")[3],
-    //     setIsLoading,
-    //     toastSuccess,
-    //     toastError,
-    //     <FaRegCircleCheck className="w-[2.3rem] h-[2.3rem] text-color-blue" />,
-    //     <LuBadgeAlert className="w-[2.3rem] h-[2.3rem] text-color-red" />,
-    //     resetForm
-    //   )
-    // );
+    const formattedData = {
+      otp,
+      password: data.password,
+    };
+    dispatch(
+      resetPasswordDispatch(
+        formattedData,
+        setIsLoading,
+        toastSuccess,
+        toastError,
+        <FaRegCircleCheck className="w-[2.3rem] h-[2.3rem] text-color-blue" />,
+        <LuBadgeAlert className="w-[2.3rem] h-[2.3rem] text-color-red" />,
+        resetForm
+      )
+    );
   };
 
   return (
@@ -77,18 +76,7 @@ const ResetPassword = () => {
           <IoMdLock className="absolute w-[2.2rem] h-[2.2rem] top-[1rem] left-[1rem] text-color-primary-1" />
         }
       />
-      <InputComponent
-        placeholder={"Password Confirm"}
-        type={"password"}
-        register={register}
-        error={errors}
-        name={"passwordConfirm"}
-        validation={registrationOption.password}
-        borderColor="border-color-blue"
-        icon={
-          <IoMdLock className="absolute w-[2.2rem] h-[2.2rem] top-[1rem] left-[1rem] text-color-primary-1" />
-        }
-      />
+
       <button
         disabled={isLoading}
         type="submit"
@@ -97,7 +85,7 @@ const ResetPassword = () => {
         }`}
       >
         {isLoading ? (
-          <FallingLines height="25" width="25" color={"white"} visible={true} />
+          <RotatingLines width="25" strokeColor="white" />
         ) : (
           "Submit"
         )}

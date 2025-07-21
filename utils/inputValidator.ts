@@ -52,7 +52,7 @@ export const registrationOption = {
       message: "Address name cannot be greater than 150 characters",
     },
   }),
-  amountPaid: (min: unknown, max: unknown) => {
+  amountPaid: (min: unknown, max?: unknown) => {
     return {
       required: "Amount paid is required",
       min: {
@@ -108,6 +108,13 @@ export const registrationOption = {
     maxLength: {
       value: 82,
       message: "Address name cannot be greater than 42 characters",
+    },
+  },
+  ssn: {
+    required: "Social Security Number (SSN) is required",
+    pattern: {
+      value: /^\d{3}-\d{2}-\d{4}$/,
+      message: "SSN must be in the format XXX-XX-XXXX",
     },
   },
 };

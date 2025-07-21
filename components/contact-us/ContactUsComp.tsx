@@ -7,13 +7,13 @@ import SubscribeToNewsLetter from "../home/SubscribeToNewsLetter";
 const data: { subHeader: string; title: string; text: string }[] = [
   {
     subHeader: "HEADQUARTERS",
-    title: "FRANCE",
-    text: "Erskine House, 68-73 Queen Street, Edinburgh, EH2 4NR",
+    title: "LONDON",
+    text: "1 Canary Wharf, London E14 5AB, United Kingdom",
   },
   {
     subHeader: "PLAN YOUR VISIT",
     title: "Working hours:",
-    text: "Monday - Friday 9 am to 7 pm EST",
+    text: "Monday - Friday 9 am to 6 pm GMT",
   },
 ];
 

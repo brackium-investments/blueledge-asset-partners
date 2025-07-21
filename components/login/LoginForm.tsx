@@ -5,15 +5,14 @@ import { registrationOption } from "@/utils/inputValidator";
 import InputComponent from "../InputComponent";
 import { AiOutlineMail } from "react-icons/ai";
 import { IoMdLock } from "react-icons/io";
-// import { useAppDispatch } from "../../hooks/customHook";
-// import { loginInvestorHandler } from "@/actions/investorAction";
-// import { toastError, toastSuccess } from "@/utils/toastFuncs";
-// import { FaRegCircleCheck } from "react-icons/fa6";
-// import { LuBadgeAlert } from "react-icons/lu";
-import { FallingLines } from "react-loader-spinner";
-// import { useRouter } from "next/navigation";
+import { useAppDispatch } from "@/hooks/state-hook";
+import { RotatingLines } from "react-loader-spinner";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
-// import { loginInvestorDispatch } from "@/actions/investorActions";
+import { toastError, toastSuccess } from "@/utils/toastFuncs";
+import { FaRegCircleCheck } from "react-icons/fa6";
+import { LuBadgeAlert } from "react-icons/lu";
+import { userLoginDispatch } from "@/actions/authAction";
 
 const LoginForm = () => {
   type FormData = {
@@ -21,9 +20,9 @@ const LoginForm = () => {
     password: string;
   };
 
-  //   const router = useRouter();
+  const router = useRouter();
 
-  //   const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -44,28 +43,28 @@ const LoginForm = () => {
       email: "",
       password: "",
     });
-    // router.replace(`/dashboard`);
+    router.replace(`/dashboard`);
   };
 
   const onSubmit: SubmitHandler<FormData> = (data) => {
     console.log(data);
-    // dispatch(
-    //   loginInvestorDispatch(
-    //     data,
-    //     setIsLoading,
-    //     toastSuccess,
-    //     toastError,
-    //     <FaRegCircleCheck className="w-[2.3rem] h-[2.3rem] text-color-blue" />,
-    //     <LuBadgeAlert className="w-[2.3rem] h-[2.3rem] text-color-red" />,
-    //     resetForm
-    //   )
-    // );
+    dispatch(
+      userLoginDispatch(
+        data,
+        setIsLoading,
+        toastSuccess,
+        toastError,
+        <FaRegCircleCheck className="w-[2.3rem] h-[2.3rem] text-color-blue" />,
+        <LuBadgeAlert className="w-[2.3rem] h-[2.3rem] text-color-red" />,
+        resetForm
+      )
+    );
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
       <InputComponent
-        placeholder={"Email"}
+        placeholder={"Enter your email"}
         type={"email"}
         register={register}
         error={errors}
@@ -77,7 +76,7 @@ const LoginForm = () => {
         }
       />
       <InputComponent
-        placeholder={"Password"}
+        placeholder={"Enter your password"}
         type={"password"}
         register={register}
         error={errors}
@@ -100,11 +99,7 @@ const LoginForm = () => {
           isLoading && "opacity-75"
         }`}
       >
-        {isLoading ? (
-          <FallingLines height="25" width="25" color={"white"} visible={true} />
-        ) : (
-          "Login"
-        )}
+        {isLoading ? <RotatingLines width="25" strokeColor="white" /> : "Login"}
       </button>
     </form>
   );

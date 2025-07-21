@@ -16,3 +16,15 @@ export const auth = axios.create({
 export const investment = axios.create({
   baseURL: `${base}/investments`,
 });
+
+export const foundation = axios.create({
+  baseURL: `${base}/foundations`,
+});
+
+export const loan = axios.create({
+  baseURL: `${base}/loans`,
+});
+
+export const subscriber = axios.create({
+  baseURL: `${base}/subscribers`,
+});

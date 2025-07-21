@@ -13,29 +13,32 @@ import {
 
 import { useMediaQuery } from "react-responsive";
 import formatAmount from "@/utils/formatAmount";
+import { useAppSelector } from "@/hooks/state-hook";
 
 const InvestorGraph = () => {
   const isMobile = useMediaQuery({
     query: "(max-width: 650px)",
   });
 
-  const graphData = [
-    {
-      investmentType: "AI",
-      deposit: 40000,
-      profit: 2000,
-    },
-    {
-      investmentType: "STOCK",
-      deposit: 28000,
-      profit: 3200,
-    },
-    {
-      investmentType: "CRYPTO",
-      deposit: 56000,
-      profit: 12400,
-    },
-  ];
+  const { graphData } = useAppSelector((state) => state.dashboard);
+
+  // const graphData = [
+  //   {
+  //     investmentType: "STOCKS & ETFs",
+  //     deposit: 0,
+  //     profit: 0,
+  //   },
+  //   {
+  //     investmentType: "MUTUAL FUNDS",
+  //     deposit: 0,
+  //     profit: 0,
+  //   },
+  //   {
+  //     investmentType: "CRYPTO",
+  //     deposit: 0,
+  //     profit: 0,
+  //   },
+  // ];
 
   const investmentsStats = [
     {
@@ -43,22 +46,24 @@ const InvestorGraph = () => {
       val: graphData
         .map((item) => item.deposit)
         .reduce((acc, cur) => acc + cur, 0),
-      color: "bg-[#B9B28A]",
+      color: "bg-[#dd9933]",
     },
     {
       title: "Total Profit",
       val: graphData
         .map((item) => item.profit)
         .reduce((acc, cur) => acc + cur, 0),
-      color: "bg-[#EBE5C2]",
+      color: "bg-[#f3dbb7]",
     },
   ];
 
   return (
     <div className="w-full">
-      <h3 className="text-[3rem] font-nunito font-medium ">Investments</h3>
+      <h3 className="text-[3rem] font-nunito font-medium text-secondary-1 ">
+        Active Investments
+      </h3>
       <div className="flex mt-[5rem] w-full">
-        <div className="pr-[2.5rem] border-r border-r-[rgba(0,0,0,0.15)] smd:flex smd:border-r-0 smd:my-[2rem] smd:pr-0">
+        <div className="pr-[2.5rem] border-r border-r-[rgba(0,0,0,0.15)] ">
           {investmentsStats.map((stat: any) => (
             <div
               key={stat.title}
@@ -101,13 +106,13 @@ const InvestorGraph = () => {
               <Bar
                 dataKey="deposit"
                 stackId="a"
-                fill="#B9B28A"
+                fill="#dd9933"
                 // radius={[10, 10, 0, 0]}
               />
               <Bar
                 dataKey="profit"
                 stackId="a"
-                fill="#EBE5C2"
+                fill="#f3dbb7"
                 radius={[10, 10, 0, 0]}
               />
             </BarChart>

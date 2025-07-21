@@ -3,13 +3,13 @@
 import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import InputComponent from "../InputComponent";
-import { FallingLines } from "react-loader-spinner";
-// import { toastError, toastSuccess } from "@/utils/toastFuncs";
-// import { FaRegCircleCheck } from "react-icons/fa6";
-// import { LuBadgeAlert } from "react-icons/lu";
-// import { useAppDispatch } from "@/hooks/customHook";
-// import { contactMeDispatch } from "@/actions/contactMeActions";
+import { FallingLines, RotatingLines } from "react-loader-spinner";
+import { toastError, toastSuccess } from "@/utils/toastFuncs";
+import { FaRegCircleCheck } from "react-icons/fa6";
+import { LuBadgeAlert } from "react-icons/lu";
+import { useAppDispatch } from "@/hooks/state-hook";
 import { registrationOption } from "@/utils/inputValidator";
+import { contactUsDispatch } from "@/actions/investorActions";
 
 type FormData = {
   fullName: string;
@@ -19,7 +19,7 @@ type FormData = {
 };
 
 const ContactForm = () => {
-  //   const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
   const [message, setMessage] = useState<string>("");
   const [msgError, setMsgError] = useState<string>("");
   const [loading, setIsLoading] = useState<boolean>(false);
@@ -38,7 +38,7 @@ const ContactForm = () => {
     },
   });
 
-  const resetFunc = () => {
+  const resetForm = () => {
     reset({
       fullName: "",
       email: "",
@@ -58,13 +58,23 @@ const ContactForm = () => {
     }
 
     const modifiedData = {
-      name: data.fullName,
+      fullname: data.fullName,
       email: data.email,
-      number: data.phoneNumber,
+      phoneNumber: data.phoneNumber,
       message,
     };
 
-    // dispatch(contactMeDispatch(modifiedData));
+    dispatch(
+      contactUsDispatch(
+        modifiedData,
+        setIsLoading,
+        toastSuccess,
+        toastError,
+        <FaRegCircleCheck className="w-[2.3rem] h-[2.3rem] text-color-blue" />,
+        <LuBadgeAlert className="w-[2.3rem] h-[2.3rem] text-color-red" />,
+        resetForm
+      )
+    );
   };
 
   return (
@@ -119,13 +129,9 @@ const ContactForm = () => {
       </div>
       <button
         type="submit"
-        className="mt-[4rem] flex items-center justify-center w-full py-[1rem] text-center text-[2rem] font-medium rounded-md bg-secondary-1 text-white hover:text-secondary-1 hover:bg-transparent transition-all duration-150 ease-in border border-secondary-1 cursor-pointer"
+        className="mt-[4rem] flex items-center justify-center w-full py-[1rem] text-center text-[2rem] font-medium rounded-md bg-secondary-1 text-white  border border-secondary-1 cursor-pointer"
       >
-        {loading ? (
-          <FallingLines color="#ffffff" width="30" visible={true} />
-        ) : (
-          "Send"
-        )}
+        {loading ? <RotatingLines width="25" strokeColor="white" /> : "Send"}
       </button>
     </form>
   );

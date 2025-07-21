@@ -6,28 +6,38 @@ export type AboutUsPath = {
 
 export const aboutUsPaths: AboutUsPath[] = [
   {
-    date: "August 2021",
-    year: 2021,
-    text: "New office in marseille",
+    date: "1955",
+    year: 1955,
+    text: "VMZ Inc. founded with commitment to wealth protection",
   },
   {
-    date: "july 2022",
-    year: 2022,
-    text: "Certificate of full accreditation",
+    date: "1975",
+    year: 1975,
+    text: "Established private liquidity services division",
   },
   {
-    date: "November 2023",
-    year: 2023,
-    text: "New office Amsterdam",
+    date: "1995",
+    year: 1995,
+    text: "Expanded into technology investment banking",
   },
   {
-    date: "October 2024",
+    date: "2010",
+    year: 2010,
+    text: "Opened first international office in London",
+  },
+  {
+    date: "2015",
+    year: 2015,
+    text: "Global expansion to Hong Kong and Tokyo",
+  },
+  {
+    date: "2020",
+    year: 2020,
+    text: "Established offices in Frankfurt and Singapore",
+  },
+  {
+    date: "2024",
     year: 2024,
-    text: "More than 22,000 members",
-  },
-  {
-    date: "February 2025",
-    year: 2025,
-    text: "More than 500 workers",
+    text: "Launched digital asset conversion services",
   },
 ];

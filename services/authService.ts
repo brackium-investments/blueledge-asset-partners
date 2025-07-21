@@ -16,7 +16,7 @@ export const forgotPassword = async (email: string) => {
 };
 
 export const resetPassword = async (data: {
-  otp: number;
+  otp: string;
   password: string;
 }) => {
   return await auth.patch("/reset-password", data);

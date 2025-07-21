@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unsafe-function-type */
 import calculateExpirationTime from "../utils/calculateExpirationTime";
@@ -76,13 +77,12 @@ export const userLogout = () => {
 };
 
 // autologout when page is refreshed
-export const autoLogout = (tokenDuration: any, navToHome: Function) => {
+export const autoLogout = (tokenDuration: any) => {
   console.log("auto", tokenDuration);
 
   return (dispatch: any) => {
     logoutTimer = setTimeout(async () => {
       dispatch(authActions.autoLogoutHandler());
-      navToHome();
     }, tokenDuration);
   };
 };
@@ -121,7 +121,6 @@ export const forgotPasswordDispatch =
     setIsLoading(true);
     try {
       const res = await forgotPassword(email);
-      console.log(res);
       toastSuccess("Email sent successfully", iconSucess);
       reset();
       setIsLoading(false);
@@ -133,7 +132,7 @@ export const forgotPasswordDispatch =
 
 export const resetPasswordDispatch =
   (
-    data: { otp: number; password: string },
+    data: { otp: string; password: string },
     setIsLoading: Function,
     toastSuccess: any,
     toastError: any,
@@ -145,7 +144,6 @@ export const resetPasswordDispatch =
     setIsLoading(true);
     try {
       const res = await resetPassword(data);
-      console.log(res);
       toastSuccess("Password reset successful", iconSucess);
       reset();
       setIsLoading(false);

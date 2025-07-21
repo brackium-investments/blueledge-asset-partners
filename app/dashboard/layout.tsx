@@ -1,8 +1,8 @@
-import DashboardNav from "@/components/Dashboard/DashboardNav";
+import DashboardNav from "@/components/dashboard/DashboardNav";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Freywood | Dashboard",
+  title: "Beacon | Dashboard",
   description: "Building wealth, Securing futures",
 };
 

@@ -10,51 +10,51 @@ const iconClassname = "w-[3.5rem] h-[3.5rem] text-secondary-1";
 
 const data: { text: string; icon: ReactNode }[] = [
   {
-    text: "Developing Financing Options",
+    text: "Private Liquidity Solutions",
     icon: <FaMoneyBillTrendUp className={iconClassname} />,
   },
   {
-    text: "Improving Your Business Planning",
+    text: "Technology Investment Banking",
     icon: <IoBusinessSharp className={iconClassname} />,
   },
   {
-    text: "Financial Modeling and Analytics",
+    text: "Digital Asset Conversion",
     icon: <HiLightBulb className={iconClassname} />,
   },
   {
-    text: "Delivering Financing Solutions",
+    text: "Wealth Management Strategy",
     icon: <TbTargetArrow className={iconClassname} />,
   },
 ];
 
 const data2: { title: string; text: string }[] = [
   {
-    title: "We are able to give truly independent advice",
-    text: "The flexibility of being able to make money by accessing the stock market from almost anywhere with internet connection is one of the main attractions to this possible income stream.",
+    title: "70 Years of Trusted Experience",
+    text: "Our legacy reflects a steadfast commitment to protecting and growing wealth, guided by transparency, accountability, and shared success.",
   },
   {
-    title: "Financial advice based on your goals",
-    text: "Join a growing community of everyday people who are serious about making money through stocks, trading and crypto commodities. we will help you to make the best choices for your future and your finances!",
+    title: "Bespoke Financial Solutions",
+    text: "Tailored strategies designed to fit the intricate contours of your financial world, adapting with you every step of the way.",
   },
   {
-    title: "We’re here to help during market volatility",
-    text: "The markets are continually breaking record highs and there has NEVER been a better time to get involved in the industry of stocks and crypto. The time to get active is NOW! You don’t want to miss out on this historic time and we want to help!",
+    title: "Global Technology Investment Banking",
+    text: "Industry specialists across London, Hong Kong, Tokyo, Frankfurt, and Singapore delivering strategic advisory services for the entire technology ecosystem.",
   },
 ];
 
 const FutureIsBrighterComp = () => {
   return (
-    <SectionContainer containerClassname="font-sans flex flex-col py-[10rem] bg-white">
+    <SectionContainer containerClassname="font-sans flex flex-col pb-[10rem] bg-white relative z-[30]">
       <div className="flex justify-between ">
         <div className="w-[45%]">
           <HeaderText textClassname="text-secondary-1 font-bold">
             Future is brighter when you’re more prepared
           </HeaderText>
           <p className="text-black mt-[1rem]">
-            We believe that access to financial freedom is a fundamental human
-            right. Our mission is to make sure everyone has the opportunity to
-            exercise that right by making simple, sophisticated, and affordable
-            financial products.
+            When you choose VMZ, you’re not just selecting a financial firm.
+            You’re aligning with a trusted partner—one who understands the
+            complexities of modern wealth and is committed to helping you
+            realize the full potential of your financial future.
           </p>
         </div>
         <div className="w-[45%] grid grid-cols-2 gap-[3rem] ">

@@ -2,7 +2,8 @@ import React from "react";
 import AboutUsHero from "./AboutUsHero";
 import OurGoalsAndValues from "../home/OurGoalsAndValues";
 import HelpOurClient from "../home/HelpOurClient";
-import FutureIsBrighterComp from "./FutureIsBrighterComp";
+import WhyWorkWithUs from "./WhyWorkWithUs";
+import Foundation from "../Foundation";
 
 const AboutUsComp = () => {
   return (
@@ -10,7 +11,8 @@ const AboutUsComp = () => {
       <AboutUsHero />
       <OurGoalsAndValues />
       <HelpOurClient />
-      <FutureIsBrighterComp />
+      <WhyWorkWithUs />
+      <Foundation />
     </main>
   );
 };

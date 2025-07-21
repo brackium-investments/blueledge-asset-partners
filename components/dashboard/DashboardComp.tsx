@@ -3,24 +3,29 @@ import React from "react";
 import { BsCashCoin } from "react-icons/bs";
 import formatAmount from "@/utils/formatAmount";
 import InvestorGraph from "@/components/dashboard/InvestorGraph";
+import { useAppSelector } from "@/hooks/state-hook";
 
 const DashboardComp = () => {
+  const { availableBalance, totalDeposited, totalWithdrawn } = useAppSelector(
+    (state) => state.dashboard
+  );
+
   const data = [
     {
       title: "Available Balance",
-      value: 25000,
+      value: availableBalance,
       bgcolor: "bg-blue-100",
       iconColor: "text-blue-700",
     },
     {
       title: "Total Deposited",
-      value: 120000,
+      value: totalDeposited,
       bgcolor: "bg-green-100",
       iconColor: "text-green-700",
     },
     {
       title: "Total Withdrawn",
-      value: 350000,
+      value: totalWithdrawn,
       bgcolor: "bg-red-100",
       iconColor: "text-red-700",
     },
@@ -32,7 +37,7 @@ const DashboardComp = () => {
         {data.map((item) => (
           <div
             key={item.title}
-            className="w-full  rounded-[1rem] bg-white p-[2rem] shadow-md flex items-center"
+            className="w-full  rounded-[1rem] bg-white p-[2rem] shadow-md flex flex-col"
           >
             <div
               className={`${item.bgcolor} ${item.iconColor} w-[7rem] h-[7rem] flex items-center justify-center rounded-[0.6rem]`}
@@ -41,13 +46,13 @@ const DashboardComp = () => {
                 className={` w-[2.5rem] h-[2.5rem] text-color-current`}
               />
             </div>
-            <div className="flex-1 ml-[2rem]">
+            <div className="flex-1 mt-[2rem]">
               <p
-                className={` text-[2rem] text-gray-700  font-nunito font-semibold`}
+                className={` text-[2rem] text-secondary-1 mb-[2rem]  font-nunito font-semibold`}
               >
                 {item.title}
               </p>
-              <p className="text-[1.85rem] font-nunito font-semibold">
+              <p className="text-[2.5rem] font-nunito font-semibold">
                 ${formatAmount(String(item.value))}
               </p>
             </div>

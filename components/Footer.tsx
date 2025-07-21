@@ -8,7 +8,11 @@ const Footer = () => {
   const pathname = usePathname();
 
   return (
-    <footer className="  text-[1.6rem] w-full flex flex-col  bg-black text-white px-[8rem] py-[10rem]">
+    <footer
+      className={`${
+        pathname.includes("dashboard") ? "hidden" : "flex"
+      }   text-[1.6rem] w-full  flex-col  bg-black text-white px-[8rem] py-[10rem]`}
+    >
       <div className="w-full flex items-start justify-between">
         <div className="flex flex-col w-[40%]">
           <div className="flex items-center text-[3rem] font-bold font-geist-mono uppercase">
@@ -29,7 +33,7 @@ const Footer = () => {
           </p>
         </div>
         <div className="flex items-center  ">
-          {headerNavLinks.slice(0, -2).map((linkObj: HeaderNav, i: number) => (
+          {headerNavLinks.slice(0, -1).map((linkObj: HeaderNav, i: number) => (
             <Link
               key={i}
               href={linkObj.link}

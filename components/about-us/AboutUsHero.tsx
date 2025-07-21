@@ -5,17 +5,18 @@ import { FaRegCheckCircle } from "react-icons/fa";
 import AboutUsPathComp from "./AboutUsPathComp";
 
 const aboutUsData: string[] = [
-  "We have the needed investment experience in spades",
-  "At Beacon Trades Platforms, we provide differentiated strategic and tactical advice as well as unparalleled execution to financial sponsors for both public and private companies across a broad range of industry sectors and geographies. We help our clients identify and pursue strategic priorities, devise strategies to enhance shareholder value, and develop new ideas and deeper perspective to achieve their goals.",
-  "Our risk management protocols include rigorous internal controls and limits. All trades are taken with a focus on risk management and proper leverage.",
+  "At VMZ Inc., trust is not just a principle—it’s the cornerstone of everything we do. With over 70 years of enduring experience, our legacy reflects a steadfast commitment to protecting and growing the wealth of our clients, guided by a philosophy rooted in transparency, accountability, and shared success.",
+  "We recognize that every financial journey is unique. That’s why our approach to Private Liquidity and Financial Investments is tailored to fit the intricate contours of your financial world. Whether you're navigating the evolving dynamics of the market, planning for generational wealth, or optimizing liquidity, our bespoke strategies are designed to adapt with you—every step of the way.",
+  "VMZ is more than a financial partner; we are a collaborator in crafting solutions that reflect your values, aspirations, and legacy. Our team of seasoned professionals brings a holistic lens to wealth management, ensuring that your financial strategy supports not just your current goals but your long-term vision.",
+  "In addition to our expertise in private wealth, VMZ is a global leader in technology investment banking. With industry specialists based in London, Hong Kong, Tokyo, Frankfurt, and Singapore, we offer a full spectrum of strategic advisory services. From hardware and semiconductors to semi-cap equipment and emerging tech sectors, our integrated solutions span the entire technology ecosystem. Whether you're a startup seeking capital or a corporation exploring M&A opportunities, we deliver insights that move you forward—with a proven track record to back it up.",
 ];
 
 const solutions = [
-  "Valuation Services",
-  "Development of Financial Models",
-  "Corporate Financial Advisory",
-  "Deal Structuring",
-  "Feasibility Studies & Business Plans",
+  "Private Liquidity Provision",
+  "Investment & Private Liquidity",
+  "Business Loans for Eligible Registered Members",
+  "Wealth Management",
+  "Asset Management",
 ];
 
 const AboutUsHero = () => {
@@ -23,7 +24,7 @@ const AboutUsHero = () => {
     <SectionContainer containerClassname="font-sans pt-[8rem] pb-[20rem] bg-secondary-2 flex justify-between items-center home-clip">
       <div className="w-[45%]">
         <HeaderText textClassname="text-secondary-1 font-bold mb-[2rem]">
-          We Are A Trusted Company With 4+ Years Of Experience
+          We Are A Trusted Company With 70+ Years Of Experience
         </HeaderText>
         {aboutUsData.map((text: string) => (
           <p key={text} className="text-gray-700 mb-[1rem] last:mb-0">

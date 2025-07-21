@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 /* eslint-disable react/jsx-key */
 import { homeSec1Data } from "@/data/home";
@@ -7,6 +8,7 @@ import { BsGraphUpArrow } from "react-icons/bs";
 import { AiOutlineSketch } from "react-icons/ai";
 import { RiBankCardLine } from "react-icons/ri";
 import SectionContainer from "../SectionContainer";
+import Link from "next/link";
 
 const iconClassname = "w-[2.8rem] h-[2.8rem] text-color-curentColor";
 
@@ -49,8 +51,61 @@ const HomeHero = () => {
 
   return (
     <div className="w-full h-[calc(100vh-8rem)] bg-hero home-clip font-sans relative z-[60] ">
-      <SectionContainer containerClassname="w-full h-full bg-[rgba(0,0,0,0.7)] flex flex-col items-center justify-center  py-[10rem] home-clip px-[8rem]">
-        <motion.h2
+      <SectionContainer containerClassname="w-full h-full bg-[rgba(0,0,0,0.85)] flex  items-center justify-between  py-[10rem] home-clip px-[8rem]">
+        <div className=" text-white text-center flex flex-col items-center">
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 100 }}
+            transition={{ duration: 0.8, ease: "easeIn" }}
+            className="text-secondary-1 text-[5rem] font-bold"
+          >
+            Welcome to VMZ Inc. - Where your Financial Future Meets Strategic
+            Excellence.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 100 }}
+            transition={{ duration: 0.8, ease: "easeIn", delay: 0.3 }}
+            className="w-[70%]"
+          >
+            Global Liquidity, Personal Integrity. Unlock the Power of Digital
+            Assets with a Trusted Private Liquidity Partner. When others see
+            volatility, we see opportunity. We provide fast, compliant, and
+            strategic access to liquidity in the digital asset world - bridging
+            fiat, tokens, and commodities - so you can scale, hedge, or invest
+            with peace of mind.
+          </motion.p>
+          {/* <p>
+            At VMZ Inc., we don’t just offer services; we craft pathways to
+            enduring prosperity. Our suite of offerings is designed to empower
+            individuals and businesses alike, ensuring that every financial
+            decision is a step toward greater security and growth.
+          </p> */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 100 }}
+            transition={{ duration: 0.8, ease: "easeIn", delay: 0.5 }}
+            className="mt-[2rem]"
+          >
+            <Link
+              href={"/register"}
+              type="button"
+              className="bg-white text-black  px-[2rem] py-[1rem] rounded-[0.6rem] mr-[2rem] hover:bg-secondary-1 hover:text-white transition-all duration-150 ease-in"
+            >
+              Request Access
+            </Link>
+            <button
+              type="button"
+              className="bg-secondary-1 text-white px-[2rem] py-[1rem] rounded-[0.6rem] hover:bg-white hover:text-black duration-150 ease-in transition-all cursor-pointer"
+            >
+              Schedule a call
+            </button>
+          </motion.div>
+        </div>
+        {/* <div className="w-[45%] bg-amber-300">
+          <p>Ejim</p>
+        </div> */}
+        {/* <motion.h2
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.2, ease: "easeIn" }}
@@ -83,7 +138,7 @@ const HomeHero = () => {
               </motion.div>
             )
           )}
-        </motion.div>
+        </motion.div> */}
       </SectionContainer>
     </div>
   );

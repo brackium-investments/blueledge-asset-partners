@@ -31,170 +31,80 @@ export type OurMissionBox = {
 export const ourMissionBox: OurMissionBox[] = [
   {
     image: mission1,
-    header: "Affiliate Marketing",
-    text: "Third party for customers to businesses (goods & services)",
+    header: "Investment & Private Liquidity",
+    text: "Investment solutions and private liquidity services",
   },
   {
     image: mission2,
-    header: "Partnerships",
-    text: "Partner with organizations for growth and viability",
+    header: "Wealth Management",
+    text: "Personalized wealth management strategies",
   },
   {
     image: mission3,
-    header: "Investing",
-    text: "Equities, Bonds, C.D.’s, Cryptocurrencies, and Startup",
+    header: "Private Liquidity Provision",
+    text: "Liquidity solutions across diverse asset classes",
   },
   {
     image: mission4,
-    header: "Training & Development",
-    text: "We train and develop our employees in all areas.",
+    header: "Asset Management",
+    text: "Professional portfolio management services",
   },
 ];
 
-export type TradingPlan = {
+export type InvestmentPlan = {
   type: string;
   min: number;
-  max: number;
+  expectedReturn: number;
   roi: number;
-  roiDuration: string;
-  compounding?: boolean;
-  support?: boolean;
-  timeFrame?: string;
 };
 
-const forexTradingPlans: TradingPlan[] = [
-  {
-    type: "BEGINNERS",
-    min: 200,
-    max: 2499,
-    roi: 2,
-    roiDuration: "daily",
-  },
-  {
-    type: "REGULAR",
-    min: 2500,
-    max: 4999,
-    roi: 2.5,
-    compounding: true,
-    roiDuration: "daily",
-    support: true,
-  },
-  {
-    type: "ACCESS",
-    min: 5000,
-    max: 24999,
-    roi: 3,
-    compounding: true,
-    roiDuration: "daily",
-    support: true,
-    timeFrame: "6 weeks",
-  },
-  {
-    type: "INTERMEDIATE",
-    min: 25000,
-    max: 99999,
-    roi: 3.5,
-    compounding: true,
-    roiDuration: "daily",
-    support: true,
-  },
-  {
-    type: "ADVANCED",
-    min: 100000,
-    max: 1000000000,
-    roi: 4,
-    compounding: true,
-    roiDuration: "daily",
-    support: true,
-  },
-];
-
-const matrixTradingPlans: TradingPlan[] = [
-  {
-    type: "CBD",
-    min: 80000,
-    max: 150000,
-    roi: 3,
-    roiDuration: "daily",
-    compounding: true,
-    support: true,
-  },
-  {
-    type: "Oil & Gas",
-    min: 100000,
-    max: 250000,
-    roi: 3.5,
-    roiDuration: "daily",
-    compounding: true,
-    support: true,
-  },
-  {
-    type: "Real Estate",
-    min: 200000,
-    max: 250000000000,
-    roi: 4.2,
-    roiDuration: "daily",
-    compounding: true,
-    support: true,
-    timeFrame: "1 year",
-  },
-];
-
-const btcTradingPlans: TradingPlan[] = [
+export const investmentPlans: InvestmentPlan[] = [
   {
     type: "Regular Phase",
-    min: 1,
-    max: 9,
-    roi: 13,
-    roiDuration: "10 days",
-    compounding: true,
-    support: true,
+    min: 10_000,
+    expectedReturn: 12_500,
+    roi: 25,
   },
   {
     type: "Intermediate Phase",
-    min: 10,
-    max: 29,
-    roi: 17,
-    roiDuration: "10 days",
-    compounding: true,
-    support: true,
+    min: 18_000,
+    expectedReturn: 23_400,
+    roi: 30,
   },
   {
     type: "Expert Phase",
-    min: 30,
-    max: 49,
-    roi: 20,
-    roiDuration: "10 days",
-    compounding: true,
-    support: true,
+    min: 20_000,
+    expectedReturn: 27_000,
+    roi: 35,
   },
   {
     type: "Gold Phase",
-    min: 50,
-    max: 60,
-    roi: 24,
-    roiDuration: "10 days",
-    compounding: true,
-    support: true,
-  },
-];
-
-export type Plan = {
-  category: string;
-  plans: TradingPlan[];
-};
-
-export const plans: Plan[] = [
-  {
-    category: "forex trading plans",
-    plans: forexTradingPlans,
+    min: 25_000,
+    expectedReturn: 35_000,
+    roi: 40,
   },
   {
-    category: "matrix trading plans",
-    plans: matrixTradingPlans,
+    type: "Premium Phase",
+    min: 30_000,
+    expectedReturn: 43_500,
+    roi: 45,
   },
   {
-    category: "BTC trading plans",
-    plans: btcTradingPlans,
+    type: "Executive Phase",
+    min: 50_000,
+    expectedReturn: 75_000,
+    roi: 50,
+  },
+  {
+    type: "VIP Phase",
+    min: 75_000,
+    expectedReturn: 116_250,
+    roi: 55,
+  },
+  {
+    type: "Ultimate Phase",
+    min: 100_000,
+    expectedReturn: 160_000,
+    roi: 60,
   },
 ];

@@ -10,7 +10,7 @@ export default function ForgotPassword() {
       </p>
       <ForgotPassswordComp />
       <div className=" mt-[2rem]  flex items-center justify-center">
-        <p className="mr-[.75rem] ">Remembered login details? </p>
+        <p className="mr-[.75rem] ">Remember login details? </p>
         <Link href={"/login"} className="text-secondary-1">
           Login
         </Link>

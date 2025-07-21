@@ -2,9 +2,16 @@
 "use client";
 import React, { useState } from "react";
 import SectionContainer from "../SectionContainer";
-import { FallingLines } from "react-loader-spinner";
+import { RotatingLines } from "react-loader-spinner";
+import { useAppDispatch } from "@/hooks/state-hook";
+import { createSubscriberDispatch } from "@/actions/subscribersAction";
+import { toastError, toastSuccess } from "@/utils/toastFuncs";
+import { LuBadgeAlert } from "react-icons/lu";
+import { FaRegCircleCheck } from "react-icons/fa6";
 
 const SubscribeToNewsLetter = () => {
+  const dispatch = useAppDispatch();
+
   const [email, setEmail] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -13,14 +20,29 @@ const SubscribeToNewsLetter = () => {
     setEmail(e.target.value);
   };
 
-  const handleSubscribeSubmit = async (e: any) => {
+  const resetForm = () => {
+    setEmail("");
+  };
+
+  const handleSubscribeSubmit = (e: any) => {
     e.preventDefault();
 
     if (!email) {
       setError("Please enter a valid email");
       return;
     }
-    setIsLoading(true);
+
+    dispatch(
+      createSubscriberDispatch(
+        email,
+        setIsLoading,
+        toastSuccess,
+        toastError,
+        <FaRegCircleCheck className="w-[2.3rem] h-[2.3rem] text-color-blue" />,
+        <LuBadgeAlert className="w-[2.3rem] h-[2.3rem] text-color-red" />,
+        resetForm
+      )
+    );
   };
 
   return (
@@ -60,14 +82,9 @@ const SubscribeToNewsLetter = () => {
             />
             {error && <small className="text-red-500">{error}</small>}
           </div>
-          <button className="mt-[2rem] smd:w-full bg-secondary-1 text-white rounded-md text-center py-[1rem] px-[2.5rem] font-medium  md:hover:text-secondary-1 md:hover:bg-transparent transition-all duration-150 ease-in border-secondary-1 border cursor-pointer flex items-center justify-center text-[1.8rem] ">
+          <button className="mt-[2rem] w-full bg-secondary-1 text-white rounded-md text-center py-[1rem] px-[2.5rem] font-medium    transition-all duration-150 ease-in border-secondary-1 border cursor-pointer flex items-center justify-center text-[1.8rem] ">
             {isLoading ? (
-              <FallingLines
-                height="30"
-                width="30"
-                color={"white"}
-                visible={true}
-              />
+              <RotatingLines width="25" strokeColor="white" />
             ) : (
               "Subscribe"
             )}

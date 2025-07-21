@@ -28,8 +28,8 @@ export const headerNavLinks: HeaderNav[] = [
     title: "login",
     link: "/login",
   },
-  {
-    title: "register",
-    link: "/register",
-  },
+  // {
+  //   title: "register",
+  //   link: "/register",
+  // },
 ];

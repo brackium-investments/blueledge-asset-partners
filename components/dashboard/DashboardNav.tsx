@@ -1,9 +1,8 @@
 "use client";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { ReactNode, useState } from "react";
-import Image from "next/image";
-import logo from "../../assets/logo.svg";
-import { LuHouse, LuUsersRound } from "react-icons/lu";
+// import Image from "next/image";
+import { LuHouse } from "react-icons/lu";
 import { FiLock } from "react-icons/fi";
 import { FaMoneyBillAlt } from "react-icons/fa";
 import { PiHandWithdraw } from "react-icons/pi";
@@ -15,7 +14,7 @@ import { usePathname } from "next/navigation";
 import { useAppDispatch } from "@/hooks/state-hook";
 import { investorActions } from "@/slices/investorSlice";
 import { userLogout } from "@/actions/authAction";
-// import { FaM } from "react-icons/fa6";
+import { FaHandsHolding } from "react-icons/fa6";
 
 const DashboardNav: React.FC<{ children: ReactNode }> = ({ children }) => {
   const iconClassname = "text-color-current w-[2rem] h-[2rem] mr-[2rem] ";
@@ -33,6 +32,67 @@ const DashboardNav: React.FC<{ children: ReactNode }> = ({ children }) => {
       icon: <LuHouse className={iconClassname} />,
     },
     {
+      title: "Foundation",
+      link: "/dashboard/foundation",
+      icon: <FaHandsHolding className={iconClassname} />,
+    },
+
+    {
+      title: "Investment Management",
+      subTitle: "Invest",
+      icon: <FaMoneyBillAlt className={iconClassname} />,
+      links: [
+        {
+          text: "deposit",
+          link: "deposit",
+        },
+        {
+          text: "investments",
+          link: "investments",
+        },
+        // {
+        //   text: "withdrawal history",
+        //   link: "withdrawal-history",
+        // },
+      ],
+    },
+    {
+      title: "Loan Management",
+      subTitle: "Take a loan",
+      icon: <PiHandWithdraw className={iconClassname} />,
+      links: [
+        {
+          text: "apply for a loan",
+          link: "apply-for-loan",
+        },
+        {
+          text: "loan history",
+          link: "loan-history",
+        },
+      ],
+    },
+    // {
+    //   title: "Withdrawal Management",
+    //   subTitle: "Withdrawal",
+    //   icon: <PiHandWithdraw className={iconClassname} />,
+    //   links: [
+    //     {
+    //       text: "withdraw funds",
+    //       link: "withdraw-funds",
+    //     },
+    //     {
+    //       text: "withdrawal history",
+    //       link: "withdrawal-history",
+    //     },
+    //   ],
+    // },
+    // {
+    //   title: "Referrals Management",
+    //   subTitle: "Referrals",
+    //   linkText: "referrals",
+    //   icon: <LuUsersRound className={iconClassname} />,
+    // },
+    {
       title: "Account Management",
       subTitle: "Account settings",
       icon: <FiLock className={iconClassname} />,
@@ -47,42 +107,7 @@ const DashboardNav: React.FC<{ children: ReactNode }> = ({ children }) => {
         },
       ],
     },
-    {
-      title: "Deposit Management",
-      subTitle: "Deposit",
-      icon: <FaMoneyBillAlt className={iconClassname} />,
-      links: [
-        {
-          text: "deposit",
-          link: "deposit",
-        },
-        {
-          text: "deposit history",
-          link: "deposit-history",
-        },
-      ],
-    },
-    {
-      title: "Withdrawal Management",
-      subTitle: "Withdrawal",
-      icon: <PiHandWithdraw className={iconClassname} />,
-      links: [
-        {
-          text: "withdraw funds",
-          link: "withdraw-funds",
-        },
-        {
-          text: "withdrawal history",
-          link: "withdrawal-history",
-        },
-      ],
-    },
-    {
-      title: "Referrals Management",
-      subTitle: "Referrals",
-      linkText: "referrals",
-      icon: <LuUsersRound className={iconClassname} />,
-    },
+
     {
       title: "End Session",
       subTitle: "Logout",
@@ -93,30 +118,20 @@ const DashboardNav: React.FC<{ children: ReactNode }> = ({ children }) => {
   ];
 
   const logout = () => {
-    dispatch(investorActions.setInvestorDetails(null));
+    dispatch(investorActions.logoutHandler());
     dispatch(userLogout());
   };
 
   return (
     <div>
-      <header className="h-[7rem] flex items-center px-[3rem] border-b border-color-woody-1">
-        <div className="flex items-center">
-          <Image
-            src={logo}
-            alt="logo"
-            priority
-            width={50}
-            height={50}
-            className="w-[4rem] h-[4rem]"
-          />
-          <h1 className="capitalize flex text-[2.2rem] ml-[.5rem] font-bold">
-            <span className="">frey</span>
-            <span className="text-color-woody-1">wood</span>
-          </h1>
-        </div>
+      <header className="h-[7rem] flex items-center px-[3rem] shadow-md ">
+        <h1 className="flex items-center text-[3rem] font-bold font-geist-mono uppercase">
+          <span className="">Blue</span>
+          <span className="text-secondary-1">Ledge</span>
+        </h1>
       </header>
       <div className="w-full h-[calc(100vh-7rem)] flex">
-        <div className="w-[30rem] h-full ">
+        <div className="w-[30rem] h-full flex flex-col pb-[3rem] ">
           {data.map((item: any, index: number) => {
             if (item.link) {
               return (
@@ -125,9 +140,9 @@ const DashboardNav: React.FC<{ children: ReactNode }> = ({ children }) => {
                   key={item.title}
                   className={`flex items-center p-[1.5rem] border-l-[1rem] bg-white ${
                     pathname === item.link
-                      ? "text-color-woody-1 border-color-woody-1 "
-                      : "border-color-white"
-                  }`}
+                      ? "text-secondary-1 border-secondary-1 "
+                      : "border-white"
+                  } hover:text-secondary-1`}
                 >
                   {item.icon}
                   <span>{item.title}</span>
@@ -145,8 +160,8 @@ const DashboardNav: React.FC<{ children: ReactNode }> = ({ children }) => {
                     href={`/dashboard/${item.linkText}`}
                     className={`flex items-center p-[1rem] border-l-[1rem] ${
                       pathname === `/dashboard/${item.linkText}`
-                        ? "text-color-woody-1 border-color-woody-1"
-                        : "border-color-white text-gray-500 "
+                        ? "text-secondary-1 border-secondary-1"
+                        : "border-white text-gray-500 "
                     }`}
                   >
                     {item.icon}
@@ -166,12 +181,12 @@ const DashboardNav: React.FC<{ children: ReactNode }> = ({ children }) => {
 
             if (item.funcText) {
               return (
-                <div key={item.title} className="bg-white pl-[1rem]">
+                <div key={item.title} className="bg-white pl-[1rem] mt-auto  ">
                   <p className="p-[1.5rem] uppercase text-[1.3rem] text-gray-400">
                     {item.title}
                   </p>
                   <button
-                    className="flex items-center p-[1rem] text-color-black  hover:text-color-woody-1 w-full"
+                    className="flex items-center p-[1rem] text-color-black  hover:text-secondary-1 w-full cursor-pointer"
                     onClick={logout}
                   >
                     <div className="">{item.icon}</div>
@@ -191,8 +206,8 @@ const DashboardNav: React.FC<{ children: ReactNode }> = ({ children }) => {
                     className={`border-l-[1rem] ${
                       pathname.includes(item.links[0].link) ||
                       pathname.includes(item.links[1].link)
-                        ? "border-color-woody-1"
-                        : "border-color-white"
+                        ? "border-secondary-1"
+                        : "border-white"
                     }`}
                   >
                     <div
@@ -224,9 +239,9 @@ const DashboardNav: React.FC<{ children: ReactNode }> = ({ children }) => {
                               href={`/dashboard/${link.link}`}
                               className={`block py-[1rem] ${
                                 pathname === `/dashboard/${link.link}`
-                                  ? "text-color-woody-1"
+                                  ? "text-secondary-1"
                                   : "text-black"
-                              }`}
+                              } hover:text-secondary-1 transition-all duration-200 ease-in`}
                             >
                               {link.text}
                             </Link>
@@ -243,7 +258,7 @@ const DashboardNav: React.FC<{ children: ReactNode }> = ({ children }) => {
         <div className="flex-1 bg-slate-200 p-[3rem] flex flex-col overflow-y-auto">
           {children}
           <p className="text-center mt-auto">
-            © 2025 Freywood. All Rights Reserved.
+            © 2025 Beacons. All Rights Reserved.
           </p>
         </div>
       </div>

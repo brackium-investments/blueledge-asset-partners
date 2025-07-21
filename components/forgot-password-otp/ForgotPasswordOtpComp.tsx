@@ -1,19 +1,16 @@
 "use client";
-// import { useAppDispatch, useAppSelector } from "@/hooks/customHook";
-// import { authActions } from "@/slices/authSlice";
+import { useAppDispatch, useAppSelector } from "@/hooks/state-hook";
+import { authActions } from "@/slices/authSlice";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React from "react";
 import { IoIosArrowRoundBack } from "react-icons/io";
-// import { FallingLines } from "react-loader-spinner";
-// import OtpInput from "react-otp-input";
+
 import OtpInput from "react18-input-otp";
 
 const ForgotPasswordOtpComp = () => {
-  //   const { otp } = useAppSelector((state) => state.auth);
-  //   const dispatchFn = useAppDispatch();
-
-  const [otp, setOtp] = useState();
+  const { otp } = useAppSelector((state) => state.auth);
+  const dispatchFn = useAppDispatch();
 
   const router = useRouter();
 
@@ -22,17 +19,13 @@ const ForgotPasswordOtpComp = () => {
       <h3 className="text-[4rem] font-medium sm:text-[3rem]">
         Forgot Password
       </h3>
-      <p className="text-[#22222299] text-center">
-        We sent a code to{" "}
-        <span className="text-[#222222]">johndoe@gmail.com</span>
-      </p>
+      <p className="text-[#22222299] text-center">We sent a code to mail</p>
       <div className="self-stretch flex flex-col items-center mt-[4rem]">
         <OtpInput
           value={otp}
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           onChange={(enteredOtp: any) => {
-            // dispatchFn(authActions.setResetOtp(enteredOtp));
-            setOtp(enteredOtp);
+            dispatchFn(authActions.setResetOtp(enteredOtp));
           }}
           numInputs={4}
           isInputNum={true}
@@ -45,7 +38,7 @@ const ForgotPasswordOtpComp = () => {
           type="submit"
           className={`mt-[3.5rem] py-[2rem] flex justify-center hover:shadow-lg  font-medium items-center bg-secondary-1 text-white w-full border border-secondary-1 h  rounded-lg transition-all duration-300 ease-in  cursor-pointer `}
           onClick={() => {
-            router.push("/auth/reset-password");
+            router.push("/reset-password");
           }}
         >
           Reset password

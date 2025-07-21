@@ -4,19 +4,17 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { AiOutlineMail } from "react-icons/ai";
 import { registrationOption } from "@/utils/inputValidator";
 import InputComponent from "@/components/InputComponent";
-// import { useAppDispatch } from "@/hooks/customHook";
+import { useAppDispatch } from "@/hooks/state-hook";
 import { FaRegCircleCheck } from "react-icons/fa6";
 import { LuBadgeAlert } from "react-icons/lu";
-import { FallingLines } from "react-loader-spinner";
+import { RotatingLines } from "react-loader-spinner";
 import { toastError, toastSuccess } from "@/utils/toastFuncs";
-// import Link from "next/link";
-// import { usePathname, useRouter } from "next/navigation";
-// import { forgotPasswordDispatch } from "@/actions/investorActions";
+import { forgotPasswordDispatch } from "@/actions/authAction";
+import { useRouter } from "next/navigation";
 
 const ForgotPassswordComp = () => {
-  //   const pathname = usePathname();
-  //   const dispatch = useAppDispatch();
-  //   const router = useRouter();
+  const dispatch = useAppDispatch();
+  const router = useRouter();
 
   type FormData = {
     email: string;
@@ -39,21 +37,23 @@ const ForgotPassswordComp = () => {
     reset({
       email: "",
     });
+
+    router.push("/forgot-password-otp");
   };
 
   const onSubmit: SubmitHandler<FormData> = (data) => {
     console.log(data);
-    // dispatch(
-    //   forgotPasswordDispatch(
-    //     data,
-    //     setIsLoading,
-    //     toastSuccess,
-    //     toastError,
-    //     <FaRegCircleCheck className="w-[2.3rem] h-[2.3rem] text-color-blue" />,
-    //     <LuBadgeAlert className="w-[2.3rem] h-[2.3rem] text-color-red" />,
-    //     resetForm
-    //   )
-    // );
+    dispatch(
+      forgotPasswordDispatch(
+        data.email,
+        setIsLoading,
+        toastSuccess,
+        toastError,
+        <FaRegCircleCheck className="w-[2.3rem] h-[2.3rem] text-color-blue" />,
+        <LuBadgeAlert className="w-[2.3rem] h-[2.3rem] text-color-red" />,
+        resetForm
+      )
+    );
   };
 
   return (
@@ -78,7 +78,7 @@ const ForgotPassswordComp = () => {
         }`}
       >
         {isLoading ? (
-          <FallingLines height="25" width="25" color={"white"} visible={true} />
+          <RotatingLines width="25" strokeColor="white" />
         ) : (
           "Submit"
         )}

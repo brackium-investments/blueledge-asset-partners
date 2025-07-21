@@ -5,6 +5,7 @@ import { FaRegCheckCircle } from "react-icons/fa";
 import Image from "next/image";
 import SectionContainer from "../SectionContainer";
 import HeaderText from "../HeaderText";
+import { motion } from "framer-motion";
 
 const OurMission = () => {
   const [onHoverMissionBox, setOnHoverMissionBox] = useState<boolean | number>(
@@ -12,17 +13,17 @@ const OurMission = () => {
   );
 
   const ourMissionData = [
-    "Beacon Trades Platforms Group understand the importance of having investment types that suit everyone.",
-    "Beacon Trades Platforms group seeks to be an opportunity and high-quality to our investors, clients, and customers related to investing in eleven major sectors, Consumer Discretionary, Information Technology, Real Estate, Utilities, Consumer Staples, Communication Services, Financials(crypto/stock commodities), Health Care, Industrials, Materials, and Energy.",
-    "Founded in 2017, Beacon Trades Platforms Group is a minority-owned investment group that focuses on making income and value-add investments in securities, crypto/stock commodities and real estate (commercial, residential and undeveloped land) throughout the United States, Europe, South America, and Africa. Our team of investors has a combined experience of 15 years. Beacon Trades Platforms Group employs a team of advisors across economic sectors to advise securities, stock/crypto commodities and real estate investments, both domestically and internationally, to identify trends to maximize income growth while operating efficiently.",
+    "VMZ Inc. understands the importance of providing diversified digital asset solutions that meet the unique needs of every investor and business.",
+    "VMZ Inc. seeks to be the premier opportunity and high-quality financial partner for our investors, clients, and customers across five core service areas: Private Liquidity Provision, Investment & Private Liquidity, Business Loans for Eligible Registered Members, Wealth Management, and Asset Management. We specialize in bridging traditional finance with digital asset opportunities while maintaining the highest standards of integrity and strategic excellence.",
+    "VMZ Inc. employs a comprehensive team of advisors across private equity, wealth management, and alternative investment sectors to guide investment strategies, liquidity solutions, and business financing, both domestically and internationally. We identify emerging trends in private markets and digital assets to maximize growth opportunities and strategic wealth building while maintaining operational excellence and regulatory compliance.",
   ];
 
   const solutions = [
-    "Valuation Services",
-    "Development of Financial Models",
-    "Corporate Financial Advisory",
-    "Deal Structuring",
-    "Feasibility Studies & Business Plans",
+    "Private Liquidity Provision",
+    "Investment & Private Liquidity",
+    "Business Loans for Eligible Registered Members",
+    "Wealth Management",
+    "Asset Management",
   ];
 
   return (
@@ -32,18 +33,32 @@ const OurMission = () => {
           Our Mission
         </HeaderText>
         <div className="">
-          {ourMissionData.map((text: string) => (
-            <p key={text} className="text-black mb-[1rem]">
+          {ourMissionData.map((text: string, i: number) => (
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 100 }}
+              transition={{ duration: 0.4, ease: "easeIn", delay: i * 0.2 }}
+              viewport={{ once: true }}
+              key={text}
+              className="text-black mb-[1rem]"
+            >
               {text}
-            </p>
+            </motion.p>
           ))}
         </div>
         <ul className="flex flex-col mt-[1rem]">
-          {solutions.map((text: string) => (
-            <li key={text} className="flex items-center mb-[1rem]">
+          {solutions.map((text: string, i: number) => (
+            <motion.li
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 100 }}
+              transition={{ duration: 0.4, ease: "easeIn", delay: i * 0.2 }}
+              viewport={{ once: true }}
+              key={text}
+              className="flex items-center mb-[1rem]"
+            >
               <FaRegCheckCircle className="text-secondary-1 w-[2.4rem] h-[2.4rem] mr-[1rem]" />
               <span>{text}</span>
-            </li>
+            </motion.li>
           ))}
         </ul>
       </div>
