@@ -11,11 +11,11 @@ const TradingPlans = () => {
         Investment Plans
       </HeaderText>
       <p className="mb-[1rem]">
-        At VMZ Inc, we believe every investor deserves the tools, clarity, and
-        confidence to build lasting wealth. Whether you&apos;re saving for a
-        milestone or planning for long-term financial growth, our tailored
-        strategies and expert support are designed to meet you where you are —
-        and take you further.
+        At Blueledge Asset Partners, we believe every investor deserves the
+        tools, clarity, and confidence to build lasting wealth. Whether
+        you&apos;re saving for a milestone or planning for long-term financial
+        growth, our tailored strategies and expert support are designed to meet
+        you where you are — and take you further.
       </p>
       <p>
         With a professionally managed brokerage account, you can access a range

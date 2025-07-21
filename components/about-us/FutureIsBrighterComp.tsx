@@ -51,10 +51,10 @@ const FutureIsBrighterComp = () => {
             Future is brighter when you’re more prepared
           </HeaderText>
           <p className="text-black mt-[1rem]">
-            When you choose VMZ, you’re not just selecting a financial firm.
-            You’re aligning with a trusted partner—one who understands the
-            complexities of modern wealth and is committed to helping you
-            realize the full potential of your financial future.
+            When you choose Blueledge Asset Partners, you’re not just selecting
+            a financial firm. You’re aligning with a trusted partner—one who
+            understands the complexities of modern wealth and is committed to
+            helping you realize the full potential of your financial future.
           </p>
         </div>
         <div className="w-[45%] grid grid-cols-2 gap-[3rem] ">

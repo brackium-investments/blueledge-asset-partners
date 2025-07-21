@@ -15,6 +15,8 @@ import { useAppDispatch } from "@/hooks/state-hook";
 import { investorActions } from "@/slices/investorSlice";
 import { userLogout } from "@/actions/authAction";
 import { FaHandsHolding } from "react-icons/fa6";
+import Image from "next/image";
+import logo from "../../assets/logo-dark.png";
 
 const DashboardNav: React.FC<{ children: ReactNode }> = ({ children }) => {
   const iconClassname = "text-color-current w-[2rem] h-[2rem] mr-[2rem] ";
@@ -125,10 +127,20 @@ const DashboardNav: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <div>
       <header className="h-[7rem] flex items-center px-[3rem] shadow-md ">
-        <h1 className="flex items-center text-[3rem] font-bold font-geist-mono uppercase">
+        {/* <h1 className="flex items-center text-[3rem] font-bold font-geist-mono uppercase">
           <span className="">Blue</span>
           <span className="text-secondary-1">Ledge</span>
-        </h1>
+        </h1> */}
+        <div>
+          <Image
+            src={logo}
+            alt="logo image"
+            priority
+            width={300}
+            height={200}
+            className="w-full h-full"
+          />
+        </div>
       </header>
       <div className="w-full h-[calc(100vh-7rem)] flex">
         <div className="w-[30rem] h-full flex flex-col pb-[3rem] ">

@@ -11,10 +11,10 @@ const HelpOurClient = () => {
             We help our clients identify and pursue strategic priorities
           </h4>
           <p className="text-white ">
-            At VMZ Inc., we don’t just offer services; we craft pathways to
-            enduring prosperity. Our suite of offerings is designed to empower
-            individuals and businesses alike, ensuring that every financial
-            decision is a step toward greater security and growth.
+            At Blueledge Asset Partners, we don’t just offer services; we craft
+            pathways to enduring prosperity. Our suite of offerings is designed
+            to empower individuals and businesses alike, ensuring that every
+            financial decision is a step toward greater security and growth.
           </p>
           <Link
             href={"/register"}

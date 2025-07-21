@@ -7,7 +7,7 @@ import HeaderText from "../HeaderText";
 const faqs: { title: string; text: string }[] = [
   {
     title: "How to register for a personal account at your service?",
-    text: "To create personal account, please, click at ‘Registration’ button and fill in the form that opens with all required details. Make sure that all the information is correct, and press at ‘Create account’ button.",
+    text: "To create personal account, please, click on the 'Request access' button and fill in the form that opens with all required details. Make sure that all the information is correct and images are clear before submission.",
   },
   {
     title: "How much do I pay to register for a personal account?",
@@ -15,44 +15,40 @@ const faqs: { title: string; text: string }[] = [
   },
   {
     title: "How to recover the password that was forgotten?",
-    text: "Make use of password ‘Recovery’ option. In case of problem, please, contact our technical support. Before contacting us, however, please, make sure that you originally put in correct login and password (check keyboard register and layout).",
+    text: "Make use of password ‘Recovery’ option. In case of problem, please, contact our technical support. Before contacting us, however, please, make sure that you originally put in correct login and password.",
   },
   {
-    title: "What are the requirements for project participants?",
-    text: "Any person of legal age can participate in the project, irrespective of nationality, social status and religious preferences.",
+    title: "What are the requirements for investments?",
+    text: "Any person of legal age can invest, irrespective of nationality, social status and religious preferences.",
   },
   {
     title: "Is it possible to change personal account information?",
-    text: "In order to make changes to your personal data you just need to login to your account after registration and choose a corresponding menu choice.",
+    text: "In order to make changes to your personal data you just need to login to your account after registration, click on the 'Edit profile' to see form for changing personal information.",
   },
   {
     title: "What payment systems are available for deposits and withdrawals?",
-    text: "For the time being the project accepts Bitcoin, Litecoin, Dogecoin, Tether USDT-TRC20 and Others.",
+    text: "For the time being we accept Bitcoin and Tether USDT-TRC20.",
   },
   {
     title: "What is the maximum number of deposits for one investor?",
-    text: "There are no limits for a number of deposits in our project. It is up to individual investor to decide depending on his/her wishes, goals and financial capacities.",
+    text: "There are no limits for a number of deposits. It is up to individual investor to decide depending on his/her wishes, goals and financial capacities.",
   },
   {
-    title: "How the profit accruals a made in the project?",
+    title: "How the profit accruals?",
     text: "Accruals are made in accordance with the terms of investment plan chosen.",
   },
   {
     title:
       "Are there any limits for withdrawals of funds from account balance?",
-    text: "There are no limits for withdrawals. You can order payments every day.",
+    text: "There are no limits for withdrawals as far as the withdrawal is available for an investment",
   },
   {
     title: "How to make a withdrawal of funds from the system?",
-    text: "The order of withdrawal of funds is as follows: login to your personal account, get to ‘Withdraw funds’ section, choose the payment system you have funds in, put in a required amount, and confirm the operation.",
+    text: "The order of withdrawal of funds is as follows: login to your personal account, get to ‘Invest’ section, create a request to withdraw.",
   },
   {
     title: "How much time is required to process a withdrawal?",
-    text: "After you order withdrawal the funds shall be immediately transferred to your wallet. For Bitcoin, Litecoin, Dogecoin and USDT-TRC20 withdrawals you might have to wait for three confirmations from the corresponding blockchain.",
-  },
-  {
-    title: "Are there minimum and maximum amounts for withdrawal?",
-    text: "The minimum withdrawal amount from account balance is $110. There is no any maximum withdrawal limits.",
+    text: "After your withdrawal request, the funds shall be immediately transferred to your wallet after verification.",
   },
 ];
 

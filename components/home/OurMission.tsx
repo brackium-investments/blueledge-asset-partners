@@ -13,9 +13,9 @@ const OurMission = () => {
   );
 
   const ourMissionData = [
-    "VMZ Inc. understands the importance of providing diversified digital asset solutions that meet the unique needs of every investor and business.",
-    "VMZ Inc. seeks to be the premier opportunity and high-quality financial partner for our investors, clients, and customers across five core service areas: Private Liquidity Provision, Investment & Private Liquidity, Business Loans for Eligible Registered Members, Wealth Management, and Asset Management. We specialize in bridging traditional finance with digital asset opportunities while maintaining the highest standards of integrity and strategic excellence.",
-    "VMZ Inc. employs a comprehensive team of advisors across private equity, wealth management, and alternative investment sectors to guide investment strategies, liquidity solutions, and business financing, both domestically and internationally. We identify emerging trends in private markets and digital assets to maximize growth opportunities and strategic wealth building while maintaining operational excellence and regulatory compliance.",
+    "Blueledge Asset Partners understands the importance of providing diversified digital asset solutions that meet the unique needs of every investor and business.",
+    "We seek to be the premier opportunity and high-quality financial partner for our investors, clients, and customers across five core service areas: Private Liquidity Provision, Investment & Private Liquidity, Business Loans for Eligible Registered Members, Wealth Management, and Asset Management. We specialize in bridging traditional finance with digital asset opportunities while maintaining the highest standards of integrity and strategic excellence.",
+    "Blueledge Asset Partners employs a comprehensive team of advisors across private equity, wealth management, and alternative investment sectors to guide investment strategies, liquidity solutions, and business financing, both domestically and internationally. We identify emerging trends in private markets and digital assets to maximize growth opportunities and strategic wealth building while maintaining operational excellence and regulatory compliance.",
   ];
 
   const solutions = [

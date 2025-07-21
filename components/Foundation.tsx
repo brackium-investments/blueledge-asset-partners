@@ -11,12 +11,12 @@ const Foundation = () => {
         Our Foundation: Giving Back to the Society
       </HeaderText>
       <p className="mb-[5rem] text-center">
-        At VMZ Inc., we believe that true success is measured not only by
-        financial growth but by the positive impact we have on the world around
-        us. Our commitment to social responsibility is embodied in our Giving
-        Back Initiative, a heartfelt endeavor that transcends business
-        objectives to touch lives, uplift communities, and inspire collective
-        well-being.
+        At Blueledge asset partners, we believe that true success is measured
+        not only by financial growth but by the positive impact we have on the
+        world around us. Our commitment to social responsibility is embodied in
+        our Giving Back Initiative, a heartfelt endeavor that transcends
+        business objectives to touch lives, uplift communities, and inspire
+        collective well-being.
       </p>
       <div className="flex flex-col">
         {foundationData.map((item: FoundationType, index: number) => (

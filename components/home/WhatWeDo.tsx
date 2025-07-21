@@ -18,11 +18,12 @@ const WhatWeDo = () => {
         transition={{ duration: 0.4, ease: "easeIn" }}
         viewport={{ once: true }}
       >
-        At VMZ Inc., we don&apos;t just provide financial services—we build
-        intelligent frameworks that transform capital into opportunity and
-        liquidity into leverage. Every offering is strategically designed to
-        help individuals, businesses, and institutions move with clarity,
-        confidence, and control in an increasingly complex financial world.
+        At Blueledge Asset Partners, we don&apos;t just provide financial
+        services—we build intelligent frameworks that transform capital into
+        opportunity and liquidity into leverage. Every offering is strategically
+        designed to help individuals, businesses, and institutions move with
+        clarity, confidence, and control in an increasingly complex financial
+        world.
       </motion.p>
 
       <div className="grid grid-cols-3 mt-[4rem] gap-[3rem] text-left">

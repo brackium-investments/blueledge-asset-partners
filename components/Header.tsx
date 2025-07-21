@@ -3,6 +3,8 @@ import { HeaderNav, headerNavLinks } from "@/data/headerNavLinks";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
+import Image from "next/image";
+import logo from "../assets/logo-dark.png";
 
 const Header = () => {
   const pathname = usePathname();
@@ -13,9 +15,19 @@ const Header = () => {
         pathname.includes("dashboard") ? "hidden" : "flex"
       } h-[8rem] items-center justify-between px-[8rem] border-b border-gray-200 font-geist-sans relative z-[90] `}
     >
-      <div className="flex items-center text-[3rem] font-bold font-geist-mono uppercase">
-        <span className="">Beacon</span>
-        <span className="text-secondary-1">Trades</span>
+      {/* <h1 className="flex items-center text-[3rem] font-bold font-geist-mono uppercase">
+        <span className="">Blue</span>
+        <span className="text-secondary-1">Ledge</span>
+      </h1> */}
+      <div>
+        <Image
+          src={logo}
+          alt="logo image"
+          priority
+          width={300}
+          height={200}
+          className="w-full h-full"
+        />
       </div>
       <nav>
         <ul className="flex items-center">

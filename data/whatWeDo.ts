@@ -15,7 +15,7 @@ export const whatWeDoData: WhatWeDoType[] = [
       "Strategic liquidity bridging for individuals, corporations, and global entities",
     ],
     endText:
-      "Whether you're navigating U.S. markets domestically or seeking entry from abroad, VMZ ensures your financial mobility remains frictionless, legal, and secure.",
+      "Whether you're navigating U.S. markets domestically or seeking entry from abroad, Blueledge ensures your financial mobility remains frictionless, legal, and secure.",
   },
   {
     title: "Investment & Private Liquidity",
@@ -26,11 +26,11 @@ export const whatWeDoData: WhatWeDoType[] = [
       "Market-driven insights to enhance access and performance",
     ],
     endText:
-      "With VMZ, your capital stays dynamic—ready to respond to opportunities and insulated against volatility.",
+      "With Blueledge, your capital stays dynamic—ready to respond to opportunities and insulated against volatility.",
   },
   {
     title: "Business Loans for Eligible Registered Members",
-    text: "We understand that sustainable growth often needs structured support. For eligible citizens registered with VMZ for a minimum of 8 months, our business loan program offers:",
+    text: "We understand that sustainable growth often needs structured support. For eligible citizens registered with Blueledge for a minimum of 8 months, our business loan program offers:",
     subTexts: [
       "Initial access to up to $100,000 for first-time qualified applicants",
       "Increased loan potential based on successful repayment performance",
@@ -52,7 +52,7 @@ export const whatWeDoData: WhatWeDoType[] = [
   },
   {
     title: "Asset Management",
-    text: "Managing assets today demands a blend of insight, precision, and proactive strategy. At VMZ, we deliver results through:",
+    text: "Managing assets today demands a blend of insight, precision, and proactive strategy. At Blueledge, we deliver results through:",
     subTexts: [
       "Data-driven market analysis and risk-adjusted positioning",
       "Optimized portfolios designed to capture value and minimize exposure",

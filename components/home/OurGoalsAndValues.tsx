@@ -17,22 +17,22 @@ const coreValuesData: {
   {
     icon: <IoBusinessSharp className={iconClassname} />,
     header: "INNOVATION",
-    text: "Beacon Trades Platforms Group champions innovation, partnering with visionary entrepreneurs to bring transformative solutions to underserved communities.",
+    text: "We champion innovation, partnering with visionary entrepreneurs to bring transformative solutions to underserved communities.",
   },
   {
     icon: <GrDocumentPerformance className={iconClassname} />,
     header: "DEDICATION",
-    text: "Beacon Trades Platforms Group is deeply dedicated to the communities we serve, aligning our strategies with the principles of the World Economic Forum.",
+    text: "We are deeply dedicated to the communities we serve, aligning our strategies with the principles of the World Economic Forum.",
   },
   {
     icon: <GiCash className={iconClassname} />,
     header: "STRATEGIC INVESTING",
-    text: "Beacon Trades Platforms Group aims to achieve strong returns by strategically investing in commodities for maximum growth.",
+    text: "We aim to achieve strong returns by strategically investing in commodities for maximum growth.",
   },
   {
     icon: <HiLightBulb className={iconClassname} />,
     header: "OUR PHILOSOPHY",
-    text: "Beacon Trades Platforms Group is committed to sustainable investment strategies that deliver long-term, risk-adjusted returns.",
+    text: "We are committed to sustainable investment strategies that deliver long-term, risk-adjusted returns.",
   },
 ];
 
@@ -43,11 +43,11 @@ const OurGoalsAndValues = () => {
         OUR GOALS AND VALUES
       </HeaderText>
       <p className="w-[50%] text-gray-600 leading-[4rem] text-[1.8rem]">
-        Beacon Trades Platforms Group has a strong commitment to the community
-        in which we invest. Our principles models after the that of the World
-        Economic Forum, &quot;committed to improving the state of the world by
-        engaging business, political, academic, and other leaders of society to
-        shape global, regional, and industry agendas&quot;, which in turn assist
+        We has a strong commitment to the community in which we invest. Our
+        principles models after the that of the World Economic Forum,
+        &quot;committed to improving the state of the world by engaging
+        business, political, academic, and other leaders of society to shape
+        global, regional, and industry agendas&quot;, which in turn assist
         underserved communities to thrive in both economic and health standards.
       </p>
       <div className="grid grid-cols-4 gap-[3rem] mt-[6rem]">

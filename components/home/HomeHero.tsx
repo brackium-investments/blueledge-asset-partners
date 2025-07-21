@@ -59,7 +59,7 @@ const HomeHero = () => {
             transition={{ duration: 0.8, ease: "easeIn" }}
             className="text-secondary-1 text-[5rem] font-bold"
           >
-            Welcome to VMZ Inc. - Where your Financial Future Meets Strategic
+            Welcome to Blueledge - Where your Financial Future Meets Strategic
             Excellence.
           </motion.p>
           <motion.p
@@ -76,7 +76,7 @@ const HomeHero = () => {
             with peace of mind.
           </motion.p>
           {/* <p>
-            At VMZ Inc., we don’t just offer services; we craft pathways to
+            At Blueledge, we don’t just offer services; we craft pathways to
             enduring prosperity. Our suite of offerings is designed to empower
             individuals and businesses alike, ensuring that every financial
             decision is a step toward greater security and growth.
@@ -85,7 +85,7 @@ const HomeHero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 100 }}
             transition={{ duration: 0.8, ease: "easeIn", delay: 0.5 }}
-            className="mt-[2rem]"
+            className="mt-[4rem]"
           >
             <Link
               href={"/register"}
@@ -94,12 +94,12 @@ const HomeHero = () => {
             >
               Request Access
             </Link>
-            <button
-              type="button"
+            <Link
+              href={"/contact-us"}
               className="bg-secondary-1 text-white px-[2rem] py-[1rem] rounded-[0.6rem] hover:bg-white hover:text-black duration-150 ease-in transition-all cursor-pointer"
             >
               Schedule a call
-            </button>
+            </Link>
           </motion.div>
         </div>
         {/* <div className="w-[45%] bg-amber-300">
