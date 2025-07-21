@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import InputComponent from "../InputComponent";
-import { FallingLines, RotatingLines } from "react-loader-spinner";
+import { RotatingLines } from "react-loader-spinner";
 import { toastError, toastSuccess } from "@/utils/toastFuncs";
 import { FaRegCircleCheck } from "react-icons/fa6";
 import { LuBadgeAlert } from "react-icons/lu";

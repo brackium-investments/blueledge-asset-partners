@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { getLoansDispatch } from "@/actions/loanActions";
 import LoanItem from "@/components/dashboard/apply-for-loan/LoanItem";

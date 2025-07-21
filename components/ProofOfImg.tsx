@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { Dispatch, SetStateAction } from "react";
 import Image, { StaticImageData } from "next/image";
 import { ChangeEventHandler } from "react";

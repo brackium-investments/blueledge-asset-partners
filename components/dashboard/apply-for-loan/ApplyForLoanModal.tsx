@@ -1,30 +1,10 @@
 "use client";
 import React from "react";
-import { useAppDispatch, useAppSelector } from "@/hooks/state-hook";
-import { motion } from "framer-motion";
-// import { investmentActions } from '@/slices/investmentSlice';
-import { RxCross2 } from "react-icons/rx";
 import QrCode from "@/components/QrCode";
 import CopyAddressToClipboard from "@/components/CopyAddressToClipboard";
 import ApplyForLoanForm from "./ApplyForLoanForm";
 
 const ApplyForLoanModal = () => {
-  const dispatchFn = useAppDispatch();
-
-  // const investmentType = useAppSelector(
-  //   (state: any) => state.investments.investmentType
-  // );
-
-  const closeInvestmentModal = (e: any) => {
-    if (
-      e.target.dataset.close === "true" ||
-      e.target.dataset.closer === "true"
-    ) {
-      // dispatchFn(investmentActions.toggleInvestmentModal(false));
-      // dispatchFn(investmentActions.setInvestmentType(''));
-    }
-  };
-
   return (
     <div
       className={`bg-white flex font-nunito w-full mb-[2rem] rounded-[0.6rem] `}
