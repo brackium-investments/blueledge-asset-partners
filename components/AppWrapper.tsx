@@ -9,6 +9,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { autoLogout } from "@/actions/authAction";
 
+import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
+
 const AppWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const router = useRouter();
 
@@ -38,6 +40,10 @@ const AppWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       {children}
       <Footer />
       <ToastContainer />
+      <TawkMessengerReact
+        propertyId="687e4a8b0c2df81912a84b3c"
+        widgetId="1j0ml6cl0"
+      />
     </>
   );
 };
