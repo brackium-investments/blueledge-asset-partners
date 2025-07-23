@@ -143,8 +143,9 @@ export const resetPasswordDispatch =
   async (dispatch: Function) => {
     setIsLoading(true);
     try {
-      const res = await resetPassword(data);
+      await resetPassword(data);
       toastSuccess("Password reset successful", iconSucess);
+      dispatch(authActions.setResetOtp(""));
       reset();
       setIsLoading(false);
     } catch (error: any) {

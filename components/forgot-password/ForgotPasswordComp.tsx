@@ -64,11 +64,9 @@ const ForgotPassswordComp = () => {
         register={register}
         error={errors}
         name={"email"}
-        validation={registrationOption.email}
+        validation={registrationOption.email(true)}
         borderColor="border-color-blue"
-        icon={
-          <AiOutlineMail className="absolute w-[2.2rem] h-[2.2rem] top-[1rem] left-[1rem] text-black" />
-        }
+        icon={<AiOutlineMail className=" w-[2.2rem] h-[2.2rem]  text-black" />}
       />
       <button
         disabled={isLoading}

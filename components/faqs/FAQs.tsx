@@ -56,9 +56,9 @@ const FAQs = () => {
   const [expanded, setExpanded] = useState<boolean | number>(false);
 
   return (
-    <SectionContainer containerClassname="pt-[8rem] pb-[12rem] flex items-center flex-col font-sans">
+    <SectionContainer containerClassname="min-h-[calc(100vh-8rem)] pt-[8rem] pb-[12rem] flex items-center flex-col font-sans">
       <HeaderText textClassname="text-secondary-1 font-bold">FAQs</HeaderText>
-      <div className="w-[70%] mt-[4rem]">
+      <div className="w-[70%] max-lg:w-[80%] max-md:w-[90%] max-sm:w-full mt-[4rem]">
         {faqs.map((faq: { title: string; text: string }, index: number) => (
           <AccordionItem
             key={faq.title}

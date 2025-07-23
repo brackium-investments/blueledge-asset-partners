@@ -22,11 +22,11 @@ const TradingPlans = () => {
         of investment options — within stocks and ETFs, mutual funds and crypto
         — all within a plan built around your goals.
       </p>
-      <div className="grid grid-cols-3 gap-[4rem] mt-[5rem]">
+      <div className="grid grid-cols-3 max-xmd:grid-cols-2 max-sm:grid-cols-1 gap-[4rem] max-smd:gap-[3rem] mt-[5rem]">
         {investmentPlans.map((inv: InvestmentPlan) => (
           <div
             key={inv.type}
-            className="border-dashed border border-secondary-1 p-[2rem] rounded-[0.6rem] shadow-lg flex flex-col items-center font-semibold"
+            className="border-dashed border text-center border-secondary-1 p-[2rem] rounded-[0.6rem] shadow-lg flex flex-col items-center font-semibold"
           >
             <p className="text-[2.5rem] font-semibold text-secondary-1 mb-[1.5rem]">
               {inv.type}

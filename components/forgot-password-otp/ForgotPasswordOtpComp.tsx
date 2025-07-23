@@ -30,7 +30,7 @@ const ForgotPasswordOtpComp = () => {
           numInputs={4}
           isInputNum={true}
           successStyle={"!border-color-purple-1"}
-          inputStyle="!border-[0.2rem] !border-secondary-1 ring-0 outline-none focus:ring-0  focus:outline-0  !rounded-[0.8rem] !text-black-1 !active:border-secondary-1 !:outline-transparent   !w-[9.4rem] !h-[9.4rem] !text-[4rem] !font-sans otp "
+          inputStyle="!border-[0.2rem] !border-secondary-1 ring-0 outline-none focus:ring-0  focus:outline-0  !rounded-[0.8rem] !text-black-1 !active:border-secondary-1 !:outline-transparent   !w-[9.4rem] !h-[9.4rem] otp-block !max-ssm:w-[7rem] !max-ssm:h-[7rem] !text-[4rem] !font-sans otp "
           separator={<span className="w-[2rem]"></span>}
         />
         <button

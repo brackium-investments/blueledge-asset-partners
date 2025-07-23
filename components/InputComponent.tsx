@@ -50,12 +50,12 @@ const InputComponent: React.FC<InputProps> = (props) => {
     return props.type === "password" ? (
       !visible ? (
         <FaEye
-          className="absolute w-[2.2rem] h-[2.2rem] top-[1.2rem] right-[1rem] text-gray-500 cursor-pointer"
+          className=" w-[2.2rem] h-[2.2rem]  text-gray-500 cursor-pointer"
           onClick={displayPassword}
         />
       ) : (
         <FaEyeSlash
-          className="absolute w-[2.2rem] h-[2.2rem] top-[1.2rem] right-[1rem] text-gray-500 cursor-pointer"
+          className=" w-[2.2rem] h-[2.2rem]  text-gray-500 cursor-pointer"
           onClick={displayPassword}
         />
       )
@@ -88,7 +88,14 @@ const InputComponent: React.FC<InputProps> = (props) => {
           {props.label}
         </label>
       )}
-      <div className="flex relative w-full">
+      <div
+        className={`flex items-center relative w-full ${
+          props.border ? "" : "border"
+        }  py-[1rem] rounded-lg px-[1rem] ${
+          props.width ? props.width : "w-full"
+        } ${getErrorClass()}`}
+      >
+        {props.icon}
         <input
           autoFocus={props.autoFocus}
           min={props.minVal}
@@ -103,15 +110,11 @@ const InputComponent: React.FC<InputProps> = (props) => {
           }
           placeholder={props.placeholder}
           {...props.register(props.name, props.validation)}
-          className={`${props.border ? "" : "border"} py-[1rem] relative ${
-            props.pl ? props.pl : "pl-[4rem]"
-          } pr-[1rem] ${props.width ? props.width : "w-full"} ${
-            props.height && props.height
-          } ${
+          className={` relative  pl-[1rem]  ${props.height && props.height} ${
             props.shadow && props.shadow
-          } rounded-lg outline-0 ${getErrorClass()} md:w-full`}
+          }  outline-0  flex-1`}
         />
-        {props.icon}
+
         {getPasswordIcon()}
       </div>
       {getErrorText()}

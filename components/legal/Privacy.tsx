@@ -67,12 +67,12 @@ const Privacy = () => {
         of how and why we are using your data.
       </p>
       <div className="mt-[3rem]">
-        <ol className="list-upperAlpha mx-[3rem] xlg:mx-[2rem] ">
+        <ol className="list-upperAlpha mx-[3rem] max-smd:mx-[1.5rem]  ">
           {privacyData.map((data: any, i: number) => (
             <li key={i} className="list-item text-justify">
               <p className="mb-[1.5rem]">{data.title}</p>
               {data.subTitle && <p className="mb-[2rem]">{data.subTitle}</p>}
-              <ol className="list-lowerAlpha mx-[2rem]">
+              <ol className="list-lowerAlpha mx-[2rem] max-smd:mx-0">
                 {data.texts.map((text: string) => (
                   <li
                     key={text}

@@ -16,7 +16,7 @@ const ApplyForLoanModal = () => {
           </p>
         </div>
 
-        <div className="flex flex-col w-full p-[3rem]">
+        <div className="flex flex-col w-full p-[3rem] max-smd:p-[1.5rem]">
           <p className="text-secondary-1 font-medium text-center mt-[2rem] text-[1.8rem]">
             USDT (BEP20)
           </p>
@@ -49,7 +49,7 @@ const ApplyForLoanModal = () => {
               <li>Wait for it to be verified.</li>
             </ol>
           </div>
-          <div className="px-[2rem] smd:px-[1.5rem] pb-[4rem]">
+          <div className="px-[2rem] max-smd:px-0 pb-[4rem]">
             <ApplyForLoanForm />
           </div>
         </div>

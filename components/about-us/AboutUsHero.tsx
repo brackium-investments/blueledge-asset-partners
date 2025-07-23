@@ -21,8 +21,8 @@ const solutions = [
 
 const AboutUsHero = () => {
   return (
-    <SectionContainer containerClassname="font-sans pt-[8rem] pb-[20rem] bg-secondary-2 flex justify-between items-center home-clip">
-      <div className="w-[45%]">
+    <SectionContainer containerClassname="font-sans pt-[8rem] pb-[20rem] max-xmd:pb-[25rem] max-smd:pb-[8rem] bg-secondary-2 flex max-xmd:flex-col justify-between items-center home-clip">
+      <div className="w-[45%] max-xl:w-[50%] max-xmd:w-full">
         <HeaderText textClassname="text-secondary-1 font-bold mb-[2rem]">
           We Are A Trusted Company With 70+ Years Of Experience
         </HeaderText>
@@ -40,7 +40,7 @@ const AboutUsHero = () => {
           ))}
         </div>
       </div>
-      <div className="w-[45%]">
+      <div className="w-[45%] max-xmd:w-full max-xmd:mt-[3rem]">
         <AboutUsPathComp />
       </div>
     </SectionContainer>

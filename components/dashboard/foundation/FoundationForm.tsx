@@ -65,7 +65,7 @@ const FoundationForm = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
-      <div className="flex flex-wrap justify-between w-full">
+      <div className="flex flex-wrap justify-between w-full max-smd:flex-col">
         <InputComponent
           placeholder={"Enter your wallet address"}
           type={"text"}
@@ -75,7 +75,7 @@ const FoundationForm = () => {
           name={"address"}
           pl="pl-[2rem]"
           validation={registrationOption.walletAddress}
-          containerWidth="w-[45%] xmd:w-[48%] sm:w-full"
+          containerWidth="w-[45%] max-xmd:w-[48%] max-smd:w-full "
           inputBg="bg-color-primary-2"
           labelTextColor="text-black"
         />
@@ -89,7 +89,7 @@ const FoundationForm = () => {
           name={"amountPaid"}
           pl="pl-[2rem]"
           min={100}
-          containerWidth="w-[45%] xmd:w-[48%] sm:w-full"
+          containerWidth="w-[45%] max-xmd:w-[48%] max-smd:w-full"
           inputBg="bg-color-primary-2"
           validation={registrationOption.amountPaid(0, 100_000_000)}
           labelTextColor="text-black"
@@ -98,7 +98,7 @@ const FoundationForm = () => {
 
       <button
         type="submit"
-        className={`mt-[2rem] py-[1rem] flex justify-center items-center bg-secondary-1 px-[3rem] sm:w-full sm:mt-[3rem] text-white  border border-secondary-1 rounded-lg transition-all duration-300 ease-in disabled:bg-gray-300 disabled:border-gray-300 disabled:cursor-not-allowed cursor-pointer  ${
+        className={`mt-[2rem] py-[1rem] flex justify-center items-center bg-secondary-1 px-[3rem] sm:w-full sm:mt-[3rem] text-white  border border-secondary-1 rounded-lg transition-all duration-300 ease-in disabled:bg-gray-300 disabled:border-gray-300 disabled:cursor-not-allowed cursor-pointer max-smd:w-full  ${
           isLoading && "opacity-75"
         }`}
       >

@@ -89,7 +89,7 @@ export default function InvestmentsPage() {
             initial="hidden"
             animate="visible"
             variants={list}
-            className="flex-1  rounded-lg min-h-screen    grid grid-cols-3 gap-[3rem] bg-secondary-2 mb-[2rem] p-[2rem] "
+            className="flex-1  rounded-lg    grid grid-cols-3 max-smd:p-[1.5rem] max-2xl:grid-cols-2 max-smd:grid-cols-1 gap-[3rem] bg-secondary-2 mb-[2rem] p-[2rem] "
           >
             {investments
               .slice()

@@ -39,11 +39,11 @@ const whyWorkWithUsData: {
 
 const WhyWorkWithUs = () => {
   return (
-    <SectionContainer containerClassname="pt-[8rem] pb-[10rem]  flex flex-col items-center text-center relative z-40 bg-white font-sans">
+    <SectionContainer containerClassname="pt-[8rem] pb-[10rem] max-smd:pb-[8rem]  flex flex-col items-center text-center relative z-40 bg-white font-sans">
       <HeaderText textClassname={"text-secondary-1 mb-[1.5rem]"}>
         Why Work With Us
       </HeaderText>
-      <div className="grid grid-cols-4 gap-[3rem] mt-[6rem]">
+      <div className="grid grid-cols-4 max-xmd:grid-cols-2 max-ssm:grid-cols-1 gap-[3rem] max-lg:gap-[2rem] mt-[6rem] max-smd:mt-[3rem]">
         {whyWorkWithUsData.map(
           (value: { icon: ReactNode; header: string; text: string }) => (
             <div

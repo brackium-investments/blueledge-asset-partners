@@ -88,12 +88,12 @@ const DepositInvestmentForm = () => {
           name={"address"}
           pl="pl-[2rem]"
           validation={registrationOption.walletAddress}
-          containerWidth="w-[45%] xmd:w-[48%] sm:w-full"
+          containerWidth="w-[45%] max-xmd:w-[48%] max-smd:w-full"
           inputBg="bg-color-primary-2"
           labelTextColor="text-black"
         />
 
-        <div className="w-[45%] xmd:w-[48%] sm:w-full mb-[2rem]">
+        <div className="w-[45%]  max-xmd:w-[48%] max-smd:w-full mb-[2rem]">
           <label htmlFor="investment-type" className="capitalize  text-black  ">
             Investment Type
           </label>
@@ -113,7 +113,7 @@ const DepositInvestmentForm = () => {
           </div>
         </div>
 
-        <div className="w-[45%] xmd:w-[48%] sm:w-full mb-[2rem]">
+        <div className="w-[45%]  max-xmd:w-[48%] max-smd:w-full mb-[2rem]">
           <label htmlFor="investment-plan" className="capitalize  text-black  ">
             Investment Plan
           </label>
@@ -144,7 +144,7 @@ const DepositInvestmentForm = () => {
           name={"amountPaid"}
           pl="pl-[2rem]"
           min={100}
-          containerWidth="w-[45%] xmd:w-[48%] sm:w-full"
+          containerWidth="w-[45%]  max-xmd:w-[48%] max-smd:w-full"
           inputBg="bg-color-primary-2"
           validation={registrationOption.amountPaid(minAmountToBePaid)}
           labelTextColor="text-black"
@@ -168,7 +168,7 @@ const DepositInvestmentForm = () => {
       <button
         disabled={!acceptTerms || isLoading}
         type="submit"
-        className={`mt-[2rem] py-[1rem] flex justify-center items-center bg-secondary-1 px-[3rem] sm:w-full sm:mt-[3rem] text-white  border border-secondary-1 rounded-lg transition-all duration-300 ease-in disabled:bg-gray-300 disabled:border-gray-300 disabled:cursor-not-allowed cursor-pointer  ${
+        className={`mt-[2rem] py-[1rem] flex justify-center items-center bg-secondary-1 px-[3rem] sm:w-full sm:mt-[3rem] text-white  border border-secondary-1 rounded-lg transition-all duration-300 ease-in disabled:bg-gray-300 disabled:border-gray-300 disabled:cursor-not-allowed cursor-pointer max-smd:w-full  ${
           isLoading && "opacity-75"
         }`}
       >

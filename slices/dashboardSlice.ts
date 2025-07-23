@@ -13,7 +13,7 @@ const dashboardSlice = createSlice({
         profit: 0,
       },
       {
-        investmentType: "STOCKS & ETFs",
+        investmentType: "STOCKS & ETFS",
         deposit: 0,
         profit: 0,
       },

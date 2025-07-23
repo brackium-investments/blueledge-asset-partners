@@ -22,7 +22,7 @@ const ProofImgComp = ({
   setFileName: Dispatch<SetStateAction<string>>;
 }) => {
   return (
-    <div className="w-[45%]">
+    <div className="w-[45%] max-md:w-[48%] max-sm:w-full max-sm:mb-[3rem]">
       <p className=" text-black mb-[1rem] font-sans font-medium">
         {name} <span className="text-[1.2rem]">(jpg, png, pdf)</span>
       </p>

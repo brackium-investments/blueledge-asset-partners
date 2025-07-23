@@ -17,6 +17,8 @@ import { userLogout } from "@/actions/authAction";
 import { FaHandsHolding } from "react-icons/fa6";
 import Image from "next/image";
 import logo from "../../assets/logo-dark.png";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { CgClose } from "react-icons/cg";
 
 const DashboardNav: React.FC<{ children: ReactNode }> = ({ children }) => {
   const iconClassname = "text-color-current w-[2rem] h-[2rem] mr-[2rem] ";
@@ -26,6 +28,12 @@ const DashboardNav: React.FC<{ children: ReactNode }> = ({ children }) => {
   const pathname = usePathname();
 
   const [expanded, setExpanded] = useState<false | number>(false);
+
+  const [menuIsVisible, setMenuIsVisible] = useState<boolean>(false);
+
+  const toggleMenuIsVisibleHandler = () => {
+    setMenuIsVisible((prevState) => !prevState);
+  };
 
   const data = [
     {
@@ -131,7 +139,7 @@ const DashboardNav: React.FC<{ children: ReactNode }> = ({ children }) => {
           <span className="">Blue</span>
           <span className="text-secondary-1">Ledge</span>
         </h1> */}
-        <div>
+        <div className="w-[40rem] max-xlg:w-[25rem]">
           <Image
             src={logo}
             alt="logo image"
@@ -141,9 +149,26 @@ const DashboardNav: React.FC<{ children: ReactNode }> = ({ children }) => {
             className="w-full h-full"
           />
         </div>
+        <button
+          type="button"
+          className="hidden max-lg:block  ml-auto"
+          onClick={toggleMenuIsVisibleHandler}
+        >
+          {menuIsVisible ? (
+            <CgClose className="w-[3rem] h-[3rem]" />
+          ) : (
+            <HiOutlineMenuAlt3 className="w-[3rem] h-[3rem]" />
+          )}
+        </button>
       </header>
-      <div className="w-full h-[calc(100vh-7rem)] flex">
-        <div className="w-[30rem] h-full flex flex-col pb-[3rem] ">
+      <div className={`w-full h-[calc(100vh-7rem)] flex`}>
+        <div
+          className={`bg-white ${
+            menuIsVisible
+              ? "max-lg:translate-x-0"
+              : "max-lg:-translate-x-[100%]"
+          }  max-lg:transition-all max-lg:duration-300 max-lg:ease-in-out  max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:right-0  w-[30rem] h-full flex flex-col pb-[3rem] max-lg:z-[70] `}
+        >
           {data.map((item: any, index: number) => {
             if (item.link) {
               return (
@@ -155,6 +180,7 @@ const DashboardNav: React.FC<{ children: ReactNode }> = ({ children }) => {
                       ? "text-secondary-1 border-secondary-1 "
                       : "border-white"
                   } hover:text-secondary-1`}
+                  onClick={toggleMenuIsVisibleHandler}
                 >
                   {item.icon}
                   <span>{item.title}</span>
@@ -175,6 +201,7 @@ const DashboardNav: React.FC<{ children: ReactNode }> = ({ children }) => {
                         ? "text-secondary-1 border-secondary-1"
                         : "border-white text-gray-500 "
                     }`}
+                    onClick={toggleMenuIsVisibleHandler}
                   >
                     {item.icon}
                     <span
@@ -254,6 +281,7 @@ const DashboardNav: React.FC<{ children: ReactNode }> = ({ children }) => {
                                   ? "text-secondary-1"
                                   : "text-black"
                               } hover:text-secondary-1 transition-all duration-200 ease-in`}
+                              onClick={toggleMenuIsVisibleHandler}
                             >
                               {link.text}
                             </Link>
@@ -267,7 +295,7 @@ const DashboardNav: React.FC<{ children: ReactNode }> = ({ children }) => {
             }
           })}
         </div>
-        <div className="flex-1 bg-slate-200 p-[3rem] flex flex-col overflow-y-auto">
+        <div className="flex-1 bg-slate-200 p-[3rem] max-smd:p-[2rem] flex flex-col overflow-y-auto">
           {children}
           <p className="text-center mt-auto">
             © 2025 Beacons. All Rights Reserved.

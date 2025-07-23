@@ -47,7 +47,6 @@ const LoginForm = () => {
   };
 
   const onSubmit: SubmitHandler<FormData> = (data) => {
-    console.log(data);
     dispatch(
       userLoginDispatch(
         data,
@@ -69,11 +68,9 @@ const LoginForm = () => {
         register={register}
         error={errors}
         name={"email"}
-        validation={registrationOption.email}
+        validation={registrationOption.email(true)}
         borderColor="border-color-blue"
-        icon={
-          <AiOutlineMail className="absolute w-[2.2rem] h-[2.2rem] top-[1rem] left-[1rem] text-color-blue" />
-        }
+        icon={<AiOutlineMail className=" w-[2.2rem] h-[2.2rem]  text-black" />}
       />
       <InputComponent
         placeholder={"Enter your password"}
@@ -83,9 +80,7 @@ const LoginForm = () => {
         name={"password"}
         validation={registrationOption.password}
         borderColor="border-color-blue"
-        icon={
-          <IoMdLock className="absolute w-[2.2rem] h-[2.2rem] top-[1rem] left-[1rem] text-color-primary-1" />
-        }
+        icon={<IoMdLock className=" w-[2.2rem] h-[2.2rem]  text-black" />}
       />
       <div className="flex justify-end">
         <Link href={"/forgot-password"} className="text-color-blue">

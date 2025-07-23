@@ -56,7 +56,7 @@ export default function ApplyForLoanPage() {
             initial="hidden"
             animate="visible"
             variants={list}
-            className="flex-1  rounded-lg   grid grid-cols-3 p-[3rem]  gap-[3rem] bg-secondary-2 min-h-screen  "
+            className="flex-1  rounded-lg   grid grid-cols-3 p-[3rem] max-smd:p-[1.5rem] max-2xl:grid-cols-2 max-smd:grid-cols-1  gap-[3rem] bg-secondary-2  "
           >
             {loans
               .slice()

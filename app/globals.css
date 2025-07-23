@@ -49,10 +49,38 @@
     scroll-behavior: smooth !important;
   }
 
+  @media screen and (max-width: 2400px) {
+    html {
+      /* 1rem = 15px */
+      font-size: 93.75%;
+    }
+  }
+
   @media screen and (max-width: 2000px) {
+    html {
+      /* 1rem = 13px */
+      font-size: 81.25%;
+    }
+  }
+
+  @media screen and (max-width: 1700px) {
     html {
       /* 1rem = 10px */
       font-size: 62.5%;
+    }
+  }
+
+  @media screen and (max-width: 1100px) {
+    html {
+      /* 1rem = 9px */
+      font-size: 56.25%;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    html {
+      /* 1rem = 8px */
+      font-size: 50%;
     }
   }
 
@@ -62,6 +90,13 @@
 
   img {
     max-width: 100%;
+  }
+
+  @media screen and (max-width: 500px) {
+    .otp-block {
+      width: 7rem !important;
+      height: 7rem !important;
+    }
   }
 
   textarea,

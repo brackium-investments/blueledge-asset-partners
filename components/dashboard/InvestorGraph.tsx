@@ -62,12 +62,12 @@ const InvestorGraph = () => {
       <h3 className="text-[3rem] font-nunito font-medium text-secondary-1 ">
         Active Investments
       </h3>
-      <div className="flex mt-[5rem] w-full">
-        <div className="pr-[2.5rem] border-r border-r-[rgba(0,0,0,0.15)] ">
+      <div className="flex mt-[5rem] w-full max-md:flex-col">
+        <div className="pr-[2.5rem] border-r border-r-[rgba(0,0,0,0.15)] max-md:flex  ">
           {investmentsStats.map((stat: any) => (
             <div
               key={stat.title}
-              className="flex flex-col mb-[5rem] last:mb-0 smd:mr-[2.5rem] smd:last:mr-0"
+              className="flex flex-col mb-[5rem] max-md:mb-0 max-md:mr-[3rem] last:mb-0 "
             >
               <div className="flex items-center">
                 <div
@@ -81,7 +81,7 @@ const InvestorGraph = () => {
             </div>
           ))}
         </div>
-        <div className="flex-1 h-[40rem]    ml-[5rem]">
+        <div className="flex-1 h-[40rem] max-smd:h-[50rem]    ml-[5rem] max-md:ml-0 max-md:mt-[3rem]">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
               // width={500}

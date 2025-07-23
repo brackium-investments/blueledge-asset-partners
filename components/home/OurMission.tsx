@@ -27,8 +27,8 @@ const OurMission = () => {
   ];
 
   return (
-    <SectionContainer containerClassname="py-[25rem] relative z-50  flex justify-between font-sans bg-secondary-2 -mt-[10rem] home-clip">
-      <div className="flex flex-col w-[45%]">
+    <SectionContainer containerClassname="py-[25rem] max-smd:py-[8rem] max-smd:mt-0 relative z-50  flex max-lg:flex-col justify-between font-sans bg-secondary-2 -mt-[10rem] max-lg:-mt-[13rem] home-clip">
+      <div className="flex flex-col w-[45%] max-lg:w-full ">
         <HeaderText textClassname="text-secondary-1 mb-[1.5rem]">
           Our Mission
         </HeaderText>
@@ -62,12 +62,12 @@ const OurMission = () => {
           ))}
         </ul>
       </div>
-      <div className="flex flex-wrap justify-between w-[45%] gap-y-[3rem] items-start">
+      <div className="flex flex-wrap justify-between w-[45%] max-2xl:w-[50%] max-lg:w-full max-lg:grid max-lg:grid-cols-2 max-sm:grid-cols-1 max-lg:gap-[4rem] max-lg:mt-[3rem] max-lg:px-[5rem] max-md:px-0 gap-y-[3rem] items-start">
         {ourMissionBox.map((box: OurMissionBox, index: number) => (
           <div
             key={box.header}
-            className={`w-[45%] rounded-[1rem] overflow-hidden shadow-2xl bg-white ${
-              index % 2 !== 0 ? "-mt-[7rem]" : ""
+            className={`w-[45%] max-2xl:w-[48%] max-sm:h-full max-lg:w-full rounded-[1rem] overflow-hidden shadow-2xl bg-white ${
+              index % 2 !== 0 ? "-mt-[7rem] max-lg:mt-0" : ""
             } `}
             onMouseEnter={() => {
               setOnHoverMissionBox(index);
@@ -76,7 +76,7 @@ const OurMission = () => {
               setOnHoverMissionBox(false);
             }}
           >
-            <div className="w-full h-[20rem] overflow-hidden">
+            <div className="w-full h-[20rem] max-lg:h-auto overflow-hidden">
               <Image
                 src={box.image}
                 alt={`${box.header} image`}

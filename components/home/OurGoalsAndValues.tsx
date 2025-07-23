@@ -38,11 +38,11 @@ const coreValuesData: {
 
 const OurGoalsAndValues = () => {
   return (
-    <SectionContainer containerClassname="pt-[8rem] pb-[15rem]  flex flex-col items-center text-center home-clip relative z-40 bg-white font-sans">
+    <SectionContainer containerClassname="pt-[8rem] pb-[15rem] max-smd:pb-[8rem]  flex flex-col items-center text-center home-clip relative z-40 bg-white font-sans">
       <HeaderText textClassname={"text-secondary-1 mb-[1.5rem]"}>
         OUR GOALS AND VALUES
       </HeaderText>
-      <p className="w-[50%] text-gray-600 leading-[4rem] text-[1.8rem]">
+      <p className="w-[50%] max-2xl:w-[60%] max-xmd:w-[75%] max-smd:w-[90%] max-ssm:w-full text-gray-600 leading-[4rem] text-[1.8rem]">
         We has a strong commitment to the community in which we invest. Our
         principles models after the that of the World Economic Forum,
         &quot;committed to improving the state of the world by engaging
@@ -50,7 +50,7 @@ const OurGoalsAndValues = () => {
         global, regional, and industry agendas&quot;, which in turn assist
         underserved communities to thrive in both economic and health standards.
       </p>
-      <div className="grid grid-cols-4 gap-[3rem] mt-[6rem]">
+      <div className="grid grid-cols-4 max-xmd:grid-cols-2 max-ssm:grid-cols-1 gap-[3rem] max-lg:gap-[2rem] mt-[6rem]">
         {coreValuesData.map(
           (value: { icon: ReactNode; header: string; text: string }) => (
             <div

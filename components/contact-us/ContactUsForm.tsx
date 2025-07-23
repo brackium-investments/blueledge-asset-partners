@@ -15,7 +15,6 @@ type FormData = {
   fullName: string;
   email: string;
   phoneNumber: string;
-  message: string;
 };
 
 const ContactForm = () => {
@@ -34,7 +33,6 @@ const ContactForm = () => {
       fullName: "",
       email: "",
       phoneNumber: "",
-      message: "",
     },
   });
 
@@ -43,7 +41,6 @@ const ContactForm = () => {
       fullName: "",
       email: "",
       phoneNumber: "",
-      message: "",
     });
   };
 
@@ -56,6 +53,8 @@ const ContactForm = () => {
       setMsgError("Message should not exceed 150 characters");
       return;
     }
+
+    console.log(data);
 
     const modifiedData = {
       fullname: data.fullName,
@@ -88,7 +87,7 @@ const ContactForm = () => {
         label="Full Name"
         pl="pl-[1rem]"
         containerWidth="w-full"
-        validation={registrationOption.name}
+        validation={registrationOption.name(true)}
       />
       <InputComponent
         placeholder={"Enter your email"}
@@ -99,7 +98,7 @@ const ContactForm = () => {
         label="Email"
         pl="pl-[1rem]"
         containerWidth="w-full"
-        validation={registrationOption.email}
+        validation={registrationOption.email(true)}
       />
       <InputComponent
         placeholder={"Enter your phone number"}
@@ -110,7 +109,7 @@ const ContactForm = () => {
         pl="pl-[1rem]"
         label="Phone Number"
         containerWidth="w-full"
-        validation={registrationOption.phoneNumber}
+        validation={registrationOption.phoneNumber(true)}
       />
       <div className="flex flex-col w-full">
         <label className="mb-[0.5rem] text-color-blue">Message</label>

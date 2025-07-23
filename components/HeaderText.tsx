@@ -12,7 +12,7 @@ const HeaderText: FC<{ children: string; textClassname: string }> = ({
       whileInView={{ opacity: 100 }}
       transition={{ duration: 0.4, ease: "easeIn" }}
       viewport={{ once: true }}
-      className={`${textClassname} text-[4rem] font-bold font-sans`}
+      className={`${textClassname} text-[4rem] max-sm:text-[3rem] font-bold font-sans`}
     >
       {children}
     </motion.h3>

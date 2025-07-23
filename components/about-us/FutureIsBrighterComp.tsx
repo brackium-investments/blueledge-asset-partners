@@ -45,8 +45,8 @@ const data2: { title: string; text: string }[] = [
 const FutureIsBrighterComp = () => {
   return (
     <SectionContainer containerClassname="font-sans flex flex-col pb-[10rem] bg-white relative z-[30]">
-      <div className="flex justify-between ">
-        <div className="w-[45%]">
+      <div className="flex justify-between max-xmd:flex-col ">
+        <div className="w-[45%] max-xmd:w-full">
           <HeaderText textClassname="text-secondary-1 font-bold">
             Future is brighter when you’re more prepared
           </HeaderText>
@@ -57,9 +57,12 @@ const FutureIsBrighterComp = () => {
             helping you realize the full potential of your financial future.
           </p>
         </div>
-        <div className="w-[45%] grid grid-cols-2 gap-[3rem] ">
+        <div className="w-[45%] max-xmd:w-full max-xmd:mt-[2rem] grid grid-cols-2 gap-[3rem] ">
           {data.map((dt) => (
-            <div key={dt.text} className="flex flex-col">
+            <div
+              key={dt.text}
+              className="flex flex-col max-xmd:items-center max-xmd:border max-xmd:border-secondary-1 max-xmd:p-[2rem] max-xmd:rounded-[1rem] max-xmd:text-center"
+            >
               {dt.icon}
               <p className="mt-[1.5rem] text-[2rem] text-black font-semibold">
                 {dt.text}
@@ -68,9 +71,9 @@ const FutureIsBrighterComp = () => {
           ))}
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-[3rem] mt-[10rem]">
+      <div className="grid grid-cols-3 max-xmd:grid-cols-2 gap-[3rem] max-sm:gap-x-[2rem] max-ssm:grid-cols-1 mt-[10rem]">
         {data2.map((dt, index: number) => (
-          <div key={dt.title} className="border-t border-t-gray-300 pt-[2rem]">
+          <div key={dt.title} className="border-t border-t-gray-300 pt-[2rem] ">
             <p className="text-[1.4rem] text-secondary-1">0{index + 1}</p>
             <p className="my-[1rem] text-[2.5rem] font-semibold text-black">
               {dt.title}

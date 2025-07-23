@@ -80,11 +80,9 @@ const UpdatePasswordForm = () => {
           register={register}
           error={errors}
           name={"passwordCurrent"}
-          containerWidth="w-[45%] xmd:w-[48%] sm:w-full"
+          containerWidth="w-[45%] max-xmd:w-[48%] max-smd:w-full"
           validation={registrationOption.password}
-          icon={
-            <IoMdLock className="absolute w-[2.2rem] h-[2.2rem] top-[1rem] left-[1rem] text-black" />
-          }
+          icon={<IoMdLock className=" w-[2.2rem] h-[2.2rem]  text-black" />}
         />
         <InputComponent
           placeholder={"New Password"}
@@ -92,12 +90,10 @@ const UpdatePasswordForm = () => {
           label="New Password"
           register={register}
           error={errors}
-          containerWidth="w-[45%] xmd:w-[48%] sm:w-full"
+          containerWidth="w-[45%] max-xmd:w-[48%] max-smd:w-full"
           name={"newPassword"}
           validation={registrationOption.password}
-          icon={
-            <IoMdLock className="absolute w-[2.2rem] h-[2.2rem] top-[1rem] left-[1rem] text-black" />
-          }
+          icon={<IoMdLock className=" w-[2.2rem] h-[2.2rem] text-black" />}
         />
         {/* <InputComponent
           placeholder={"New Password Confirm"}

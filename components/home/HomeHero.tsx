@@ -50,14 +50,14 @@ const HomeHero = () => {
   };
 
   return (
-    <div className="w-full h-[calc(100vh-8rem)] bg-hero home-clip font-sans relative z-[60] ">
-      <SectionContainer containerClassname="w-full h-full bg-[rgba(0,0,0,0.85)] flex  items-center justify-between  py-[10rem] home-clip px-[8rem]">
+    <div className="w-full min-h-[calc(100vh-8rem)] flex flex-col  bg-hero home-clip font-sans relative z-[60] ">
+      <SectionContainer containerClassname="w-full h-full flex-1 bg-[rgba(0,0,0,0.85)] py-[10rem]  flex  items-center justify-between  py-[10rem] home-clip ">
         <div className=" text-white text-center flex flex-col items-center">
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 100 }}
             transition={{ duration: 0.8, ease: "easeIn" }}
-            className="text-secondary-1 text-[5rem] font-bold"
+            className="text-secondary-1 text-[5rem] max-ssm:text-[4rem] font-bold"
           >
             Welcome to Blueledge - Where your Financial Future Meets Strategic
             Excellence.
@@ -66,7 +66,7 @@ const HomeHero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 100 }}
             transition={{ duration: 0.8, ease: "easeIn", delay: 0.3 }}
-            className="w-[70%]"
+            className="w-[70%] max-smd:w-full"
           >
             Global Liquidity, Personal Integrity. Unlock the Power of Digital
             Assets with a Trusted Private Liquidity Partner. When others see

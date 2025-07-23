@@ -35,10 +35,10 @@ const EditProfileComp = () => {
   return (
     <div className=" font-sans ">
       <section className="  rounded-bl-lg rounded-br-lg">
-        <div className="flex w-full h-full items-center">
+        <div className="flex w-full h-full items-center max-smd:flex-col">
           <label
             htmlFor="profileImg"
-            className=" w-[20rem] h-[20rem] sm:mb-[2rem] sm:mr-0 bg-secondary-1 mr-[3rem] rounded-full flex items-center justify-center relative"
+            className=" w-[20rem] h-[20rem] max-smd:mb-[2rem] bg-secondary-1 mr-[3rem] rounded-full flex items-center justify-center relative"
           >
             <Image
               src={profileImg}
@@ -58,7 +58,7 @@ const EditProfileComp = () => {
               <FaRegEdit className="w-[2.3rem] h-[2.3rem] text-color-white" />
             </div>
           </label>
-          <div className="w-[50rem] ml-[3rem] shadow-md   bg-white p-[1.5rem] rounded-lg font-sans capitalize">
+          <div className="w-[50rem] max-smd:ml-0 max-smd:w-full ml-[3rem] shadow-md   bg-white p-[1.5rem] rounded-lg font-sans capitalize">
             <p className="text-[1.8rem] font-semibold text-black mb-[1rem]">
               Full Name: <span>{name}</span>
             </p>
@@ -74,8 +74,8 @@ const EditProfileComp = () => {
           </div>
         </div>
       </section>
-      <section className="flex justify-between mt-[5rem] p-[3rem] smd:p-[0rem]  rounded-lg bg-white ">
-        <div className=" rounded-lg w-full smd:py-[2rem] px-[1.5rem]">
+      <section className="flex justify-between mt-[5rem] max-smd:mb-[2rem] p-[3rem] max-smd:p-[2rem]  rounded-lg bg-white ">
+        <div className=" rounded-lg w-full smd:py-[2rem] px-[1.5rem] max-smd:px-0">
           <p className="text-[1.8rem] text-secondary-1 font-semibold mb-[1.5rem] uppercase">
             Update Info
           </p>

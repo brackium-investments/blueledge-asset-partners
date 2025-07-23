@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function ForgotPassword() {
   return (
-    <Auth containerClassName=" w-[35%] ">
+    <Auth containerClassName=" w-[35%] max-2xl:w-[45%] max-xlg:w-[55%] max-md:w-[65%] max-smd:w-[80%] max-sm:w-[90%] ">
       <p className="text-[2.5rem] font-semibold text-secondary-1 text-center mb-[3rem]">
         Forgot Password
       </p>

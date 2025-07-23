@@ -20,9 +20,9 @@ const data: { subHeader: string; title: string; text: string }[] = [
 const ContactUsComp = () => {
   return (
     <div className=" font-sans ">
-      <SectionContainer containerClassname="home-clip bg-white pt-[10rem] pb-[15rem]  relative z-50">
-        <div className="flex justify-between">
-          <div className="w-[45%]">
+      <SectionContainer containerClassname="home-clip bg-white pt-[10rem] max-smd:pt-[8rem]  pb-[15rem] max-smd:pb-[8rem]  relative z-50">
+        <div className="flex max-smd:flex-col justify-between">
+          <div className="w-[45%] max-smd:w-full ">
             <HeaderText textClassname="text-secondary-1 font-bold ">
               Contact Us
             </HeaderText>
@@ -39,7 +39,7 @@ const ContactUsComp = () => {
               ))}
             </div>
           </div>
-          <div className="w-[45%] ">
+          <div className="w-[45%] max-lg:w-[50%] max-smd:w-full max-smd:mt-[3rem]  ">
             <ContactForm />
           </div>
         </div>

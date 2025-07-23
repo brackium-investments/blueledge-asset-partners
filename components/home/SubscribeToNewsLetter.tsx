@@ -47,10 +47,10 @@ const SubscribeToNewsLetter = () => {
 
   return (
     <SectionContainer
-      containerClassname={` pt-[40rem] -mt-[30rem] font-sans pb-[15rem]  bg-secondary-2 relative z-10 $ flex items-center justify-between`}
+      containerClassname={` pt-[40rem] max-smd:mt-0 max-smd:pt-[10rem] -mt-[30rem] font-sans pb-[15rem] max-smd:pb-[10rem]  bg-secondary-2 relative z-10 $ flex items-center max-smd:flex-col  justify-between`}
     >
-      <div className="w-[45%]">
-        <h3 className="text-secondary-1 font-bold text-[5rem]">
+      <div className="w-[45%] max-xmd:w-[48%] max-smd:w-full">
+        <h3 className="text-secondary-1 font-bold text-[5rem] max-xmd:text-[4rem] max-smd:text-[3rem]">
           Subscribe to our newsletter
         </h3>
         <p>
@@ -58,7 +58,7 @@ const SubscribeToNewsLetter = () => {
           economies and markets.
         </p>
       </div>
-      <div className="w-[45%]">
+      <div className="w-[45%] max-xmd:w-[48%] max-smd:w-full max-smd:mt-[3rem]">
         <form
           onSubmit={(e) => {
             handleSubscribeSubmit(e);

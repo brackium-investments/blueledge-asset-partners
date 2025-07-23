@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const Foundation = () => {
   return (
-    <SectionContainer containerClassname={"mb-[10rem]"}>
+    <SectionContainer containerClassname={"mb-[10rem] max-smd:mb-[8rem]"}>
       <HeaderText textClassname={"text-secondary-1 mb-[1.5rem] text-center"}>
         Our Foundation: Giving Back to the Society
       </HeaderText>
@@ -22,19 +22,21 @@ const Foundation = () => {
         {foundationData.map((item: FoundationType, index: number) => (
           <div
             key={index}
-            className="flex justify-between mb-[5rem] items-center"
+            className="flex max-md:flex-col  justify-between mb-[5rem] items-center"
           >
             <div
-              className={`w-[45%] ${index % 2 === 0 ? "order-1" : "order-2"} `}
+              className={`w-[45%] max-lg:w-[48%] max-md:w-full max-md:text-center ${
+                index % 2 === 0 ? "order-1" : "order-2 max-md:order-1"
+              } `}
             >
               <p className="text-secondary-1 text-[2.5rem]  font-semibold ">
                 {item.title}
               </p>
-              <div className="bg-black w-[5rem] mt-[0.5rem] mb-[2rem] h-[0.2rem]"></div>
+              <div className="bg-black max-md:mx-auto w-[5rem] mt-[0.5rem] mb-[2rem] h-[0.2rem]"></div>
               <p className="text-black">{item.description}</p>
             </div>
             <div
-              className={`h-[40rem] w-[45%] bg-amber-500 ${
+              className={`h-[40rem] w-[45%] max-lg:w-[48%] max-md:w-[85%] max-sm:w-full max-md:mt-[3rem] bg-amber-500 ${
                 index % 2 === 0 ? "order-2" : "order-1"
               } rounded-[0.6rem] overflow-hidden`}
             >

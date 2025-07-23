@@ -161,8 +161,8 @@ const RegisterForm = () => {
           name={"fullName"}
           label="Full Name"
           pl="pl-[1rem]"
-          containerWidth="w-[45%] "
-          validation={registrationOption.name}
+          containerWidth="w-[45%] max-md:w-[48%] max-sm:w-full "
+          validation={registrationOption.name(true)}
         />
         <InputComponent
           placeholder={"Enter your email"}
@@ -172,8 +172,8 @@ const RegisterForm = () => {
           name={"email"}
           pl="pl-[1rem]"
           label="Email"
-          containerWidth="w-[45%] "
-          validation={registrationOption.email}
+          containerWidth="w-[45%] max-md:w-[48%] max-sm:w-full "
+          validation={registrationOption.email(true)}
         />
         <InputComponent
           placeholder={"Enter your phone number"}
@@ -183,8 +183,8 @@ const RegisterForm = () => {
           name={"phoneNumber"}
           pl="pl-[1rem]"
           label="Phone Number"
-          containerWidth="w-[45%] "
-          validation={registrationOption.phoneNumber}
+          containerWidth="w-[45%] max-md:w-[48%] max-sm:w-full"
+          validation={registrationOption.phoneNumber(true)}
         />
         <InputComponent
           placeholder={"Enter your address"}
@@ -194,28 +194,26 @@ const RegisterForm = () => {
           name={"address"}
           pl="pl-[1rem]"
           label="Address"
-          containerWidth="w-[45%] "
-          validation={registrationOption.address}
+          containerWidth="w-[45%] max-md:w-[48%] max-sm:w-full"
+          validation={registrationOption.address(true)}
         />
         <InputComponent
-          placeholder={"Password"}
+          placeholder={"Enter your password"}
           label="Password"
           type={"password"}
           register={register}
           error={errors}
           name={"password"}
           validation={registrationOption.password}
-          containerWidth="w-[45%] "
-          icon={
-            <IoMdLock className="absolute w-[2.2rem] h-[2.2rem] top-[1rem] left-[1rem] text-black" />
-          }
+          containerWidth="w-[45%] max-md:w-[48%] max-sm:w-full"
+          icon={<IoMdLock className=" w-[2.2rem] h-[2.2rem]  text-black" />}
         />
       </div>
       <div className="mt-[3rem]">
         <p className="font-medium text-[2rem] mb-[1.5rem] text-secondary-1">
           KYC Info
         </p>
-        <div className="w-full mt-[1rem] mb-[3rem] flex justify-between  ">
+        <div className="w-full mt-[1rem] mb-[3rem] max-sm:mb-0 flex justify-between max-sm:flex-wrap  ">
           <ProofImgComp
             name="State Issued ID"
             img={stateIssuedIDImg}
@@ -243,10 +241,8 @@ const RegisterForm = () => {
           error={errors}
           name={"ssn"}
           validation={registrationOption.ssn}
-          containerWidth="w-[45%] "
-          icon={
-            <IoMdLock className="absolute w-[2.2rem] h-[2.2rem] top-[1rem] left-[1rem] text-black" />
-          }
+          containerWidth="w-[45%] max-md:w-[48%] max-sm:w-full"
+          icon={<IoMdLock className=" w-[2.2rem] h-[2.2rem] text-black" />}
         />
       </div>
       <button

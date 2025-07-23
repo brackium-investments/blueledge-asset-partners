@@ -26,7 +26,7 @@ const AccordionItem: FC<{
         initial={false}
       >
         <span
-          className={`${titleClassName} flex-1 font-roboto text-left font-medium leading-[100%] text-[rgba(61,90,92,1)]`}
+          className={`${titleClassName} max-sm:mr-[2rem] flex-1 font-roboto text-left font-medium leading-[100%] text-[rgba(61,90,92,1)]`}
         >
           {title}
         </span>

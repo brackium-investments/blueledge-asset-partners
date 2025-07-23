@@ -13,11 +13,11 @@ const Footer = () => {
     <footer
       className={`${
         pathname.includes("dashboard") ? "hidden" : "flex"
-      }   text-[1.6rem] w-full  flex-col  bg-black text-white px-[8rem] py-[10rem]`}
+      }   text-[1.6rem] w-full  flex-col  bg-black text-white px-[8rem] max-xl:px-[5rem] max-xlg:px-[3rem]  max-sm:px-[2rem] py-[10rem]`}
     >
-      <div className="w-full flex items-start justify-between">
+      <div className="w-full flex max-md:flex-col items-start justify-between">
         <div className="flex flex-col w-[40%]">
-          <div className="w-[40rem]">
+          <div className="w-[40rem] max-xlg:w-[30rem]">
             <Image
               src={logo}
               alt="logo image"
@@ -44,7 +44,7 @@ const Footer = () => {
             residence. Please read IBM’s full Risk Disclosure.
           </p> */}
         </div>
-        <div className="flex items-center  ">
+        <div className="flex items-center max-md:mt-[3rem] max-ssm:flex-col max-ssm:items-start  ">
           {headerNavLinks.slice(0, -1).map((linkObj: HeaderNav, i: number) => (
             <Link
               key={i}
@@ -53,7 +53,7 @@ const Footer = () => {
                 pathname === linkObj.link
                   ? "text-secondary-1"
                   : "hover:text-secondary-1 text-white"
-              } transition-all duration-200 ease-in text-[1.8rem]`}
+              } max-ssm:block max-ssm:mb-[1.5rem] transition-all duration-200 ease-in text-[1.8rem]`}
             >
               {linkObj.title}
             </Link>

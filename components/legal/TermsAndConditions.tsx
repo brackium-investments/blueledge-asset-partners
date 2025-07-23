@@ -56,7 +56,10 @@ const TermsAndCondiition = () => {
         legal entity).
       </p>
 
-      <ol className="list-upperAlpha px-[3rem] my-[1.5rem]" type="A">
+      <ol
+        className="list-upperAlpha px-[3rem] max-smd:px-[1.5rem] my-[1.5rem]"
+        type="A"
+      >
         {agreements.map((agreement: string) => (
           <li key={agreement} className=" list-item mb-[1.5rem]">
             <p>{agreement}</p>
@@ -64,18 +67,18 @@ const TermsAndCondiition = () => {
         ))}
       </ol>
 
-      <div className="mt-[4rem]">
+      <div className="mt-[4rem] max-smd:mt-[3rem]">
         <p>
           All terms and and conditions contained herein, including without
           limitation, shall at all times be applicable to the Legal Entity and
           the latter shall conform with such terms and conditions, obligations
           and rights at all times.
         </p>
-        <ol className="list-upperAlpha px-[3rem] my-[1.5rem]">
+        <ol className="list-upperAlpha px-[3rem] max-smd:px-[1.5rem] my-[1.5rem]">
           {terms.map((item: any, i: number) => (
             <li key={i} className="list-item">
               <p className="capitalize">{item.title}</p>
-              <ol className="list-lowerAlpha mx-[2rem] my-[1.5rem]">
+              <ol className="list-lowerAlpha mx-[2rem] max-smd:mx-0 my-[1.5rem]">
                 {item.terms.map((term: string) => (
                   <li key={term} className="list-item mb-[1.5rem]">
                     {term}

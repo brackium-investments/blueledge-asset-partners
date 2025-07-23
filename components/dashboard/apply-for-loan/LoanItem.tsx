@@ -32,7 +32,7 @@ const LoanItem = ({
     <motion.div
       variants={itemVariant}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className={`border border-black w-full h-[20rem] rounded-lg overflow-hidden flex flex-col justify-between pb-[1rem] `}
+      className={`border border-black w-full h-[25rem] rounded-lg overflow-hidden flex flex-col justify-between pb-[1rem] `}
     >
       <motion.div
         layout

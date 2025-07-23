@@ -90,7 +90,7 @@ const UpdateInvestorForm = () => {
           name={"name"}
           label="Full Name"
           pl="pl-[1rem]"
-          containerWidth="w-[45%] xmd:w-[48%] sm:w-full"
+          containerWidth="w-[45%] max-xmd:w-[48%] max-smd:w-full"
           validation={registrationOption.name(false)}
         />
         <InputComponent
@@ -101,7 +101,7 @@ const UpdateInvestorForm = () => {
           name={"email"}
           pl="pl-[1rem]"
           label="Email"
-          containerWidth="w-[45%] xmd:w-[48%] sm:w-full "
+          containerWidth="w-[45%] max-xmd:w-[48%] max-smd:w-full "
           validation={registrationOption.email(false)}
         />
         <InputComponent
@@ -112,7 +112,7 @@ const UpdateInvestorForm = () => {
           name={"phoneNumber"}
           pl="pl-[1rem]"
           label="Phone Number"
-          containerWidth="w-[45%] xmd:w-[48%] sm:w-full"
+          containerWidth="w-[45%] max-xmd:w-[48%] max-smd:w-full"
           validation={registrationOption.phoneNumber(false)}
         />
         <InputComponent
@@ -123,7 +123,7 @@ const UpdateInvestorForm = () => {
           name={"address"}
           pl="pl-[1rem]"
           label="Address"
-          containerWidth="w-[45%] xmd:w-[48%] sm:w-full"
+          containerWidth="w-[45%] max-xmd:w-[48%] max-smd:w-full"
           validation={registrationOption.address(false)}
         />
       </div>

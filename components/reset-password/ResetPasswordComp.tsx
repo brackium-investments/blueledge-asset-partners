@@ -72,9 +72,7 @@ const ResetPassword = () => {
         name={"password"}
         validation={registrationOption.password}
         borderColor="border-color-blue"
-        icon={
-          <IoMdLock className="absolute w-[2.2rem] h-[2.2rem] top-[1rem] left-[1rem] text-color-primary-1" />
-        }
+        icon={<IoMdLock className=" w-[2.2rem] h-[2.2rem]  text-black" />}
       />
 
       <button

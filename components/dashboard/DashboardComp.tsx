@@ -33,7 +33,7 @@ const DashboardComp = () => {
 
   return (
     <div className="w-full">
-      <div className="grid grid-cols-3 gap-[4rem]">
+      <div className="grid grid-cols-3 gap-[4rem] max-xl:gap-[3rem] max-md:gap-[2rem] max-smd:grid-cols-2">
         {data.map((item) => (
           <div
             key={item.title}

@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 const WhatWeDo = () => {
   return (
-    <SectionContainer containerClassname="pt-[8rem] pb-[20rem]  flex flex-col items-center text-center home-clip relative z-40 bg-white font-sans">
+    <SectionContainer containerClassname="pt-[8rem] pb-[20rem] max-smd:pb-[8rem]  flex flex-col items-center text-center home-clip relative z-40 bg-white font-sans">
       <HeaderText textClassname="text-secondary-1 mb-[1.5rem]">
         What We Do
       </HeaderText>
@@ -26,7 +26,7 @@ const WhatWeDo = () => {
         world.
       </motion.p>
 
-      <div className="grid grid-cols-3 mt-[4rem] gap-[3rem] text-left">
+      <div className="grid grid-cols-3 max-xlg:grid-cols-2 max-smd:grid-cols-1 mt-[4rem] gap-[3rem] text-left">
         {whatWeDoData.map((data: WhatWeDoType, i: number) => (
           <motion.div
             initial={{ opacity: 0 }}
