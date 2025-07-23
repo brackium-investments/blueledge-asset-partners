@@ -76,14 +76,14 @@ const OurMission = () => {
               setOnHoverMissionBox(false);
             }}
           >
-            <div className="w-full h-[20rem] max-lg:h-auto overflow-hidden">
+            <div className="w-full h-[20rem] max-lg:h-[40rem] overflow-hidden">
               <Image
                 src={box.image}
                 alt={`${box.header} image`}
                 priority
                 width={500}
                 height={500}
-                className={`w-full h-full ${
+                className={`w-full h-full object-cover ${
                   onHoverMissionBox === index ? "scale-[1.10]" : "scale-100"
                 } transition-all duration-300 ease-in `}
               />
