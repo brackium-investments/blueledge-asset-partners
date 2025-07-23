@@ -139,7 +139,7 @@ const DashboardNav: React.FC<{ children: ReactNode }> = ({ children }) => {
           <span className="">Blue</span>
           <span className="text-secondary-1">Ledge</span>
         </h1> */}
-        <div className="w-[40rem] max-xlg:w-[25rem]">
+        <div className="w-[30rem] max-xlg:w-[25rem]">
           <Image
             src={logo}
             alt="logo image"

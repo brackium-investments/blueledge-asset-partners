@@ -66,7 +66,7 @@ const OurMission = () => {
         {ourMissionBox.map((box: OurMissionBox, index: number) => (
           <div
             key={box.header}
-            className={`w-[45%] max-2xl:w-[48%] max-sm:h-full max-lg:w-full rounded-[1rem] overflow-hidden shadow-2xl bg-white ${
+            className={`w-[45%] max-2xl:w-[48%] max-xmd:h-full max-lg:w-full rounded-[1rem] overflow-hidden shadow-2xl bg-white ${
               index % 2 !== 0 ? "-mt-[7rem] max-lg:mt-0" : ""
             } `}
             onMouseEnter={() => {
@@ -88,7 +88,7 @@ const OurMission = () => {
                 } transition-all duration-300 ease-in `}
               />
             </div>
-            <div className="p-[2rem]">
+            <div className="p-[2rem] h-auto w-full">
               <p className="text-[1.8rem] text-secondary-1 mb-[1rem] font-medium">
                 {box.header}
               </p>
