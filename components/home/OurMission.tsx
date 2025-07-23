@@ -66,7 +66,7 @@ const OurMission = () => {
         {ourMissionBox.map((box: OurMissionBox, index: number) => (
           <div
             key={box.header}
-            className={`w-[45%] max-2xl:w-[48%] max-xmd:h-full max-lg:w-full rounded-[1rem] overflow-hidden shadow-2xl bg-white ${
+            className={`w-[45%] max-2xl:w-[48%] max-lg:h-[60rem] max-lg:w-full rounded-[1rem] overflow-hidden shadow-2xl bg-white ${
               index % 2 !== 0 ? "-mt-[7rem] max-lg:mt-0" : ""
             } `}
             onMouseEnter={() => {
