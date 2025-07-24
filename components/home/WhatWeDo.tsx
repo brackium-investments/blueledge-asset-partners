@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import React from "react";
 import HeaderText from "../HeaderText";
@@ -13,10 +14,10 @@ const WhatWeDo = () => {
         What We Do
       </HeaderText>
       <motion.p
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 100 }}
-        transition={{ duration: 0.4, ease: "easeIn" }}
-        viewport={{ once: true }}
+      // initial={{ opacity: 0 }}
+      // whileInView={{ opacity: 100 }}
+      // transition={{ duration: 0.4, ease: "easeIn" }}
+      // viewport={{ once: true }}
       >
         At Blueledge Asset Partners, we don&apos;t just provide financial
         services—we build intelligent frameworks that transform capital into
@@ -29,10 +30,10 @@ const WhatWeDo = () => {
       <div className="grid grid-cols-3 max-xlg:grid-cols-2 max-smd:grid-cols-1 mt-[4rem] gap-[3rem] text-left">
         {whatWeDoData.map((data: WhatWeDoType, i: number) => (
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 100 }}
-            transition={{ duration: 0.4, ease: "easeIn", delay: i * 0.2 }}
-            viewport={{ once: true }}
+            // initial={{ opacity: 0 }}
+            // whileInView={{ opacity: 100 }}
+            // transition={{ duration: 0.4, ease: "easeIn", delay: i * 0.2 }}
+            // viewport={{ once: true }}
             key={data.title}
             className=" text-black border-secondary-1 border   transition-all duration-300 ease-in p-[2rem] rounded-[1rem] shadow-xl"
           >

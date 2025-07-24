@@ -54,18 +54,18 @@ const HomeHero = () => {
       <SectionContainer containerClassname="w-full h-full flex-1 bg-[rgba(0,0,0,0.85)] py-[10rem]  flex  items-center justify-between  py-[10rem] home-clip ">
         <div className=" text-white text-center flex flex-col items-center">
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 100 }}
-            transition={{ duration: 0.8, ease: "easeIn" }}
+            // initial={{ opacity: 0 }}
+            // animate={{ opacity: 100 }}
+            // transition={{ duration: 0.8, ease: "easeIn" }}
             className="text-secondary-1 text-[5rem] max-ssm:text-[4rem] font-bold"
           >
             Welcome to Blueledge - Where your Financial Future Meets Strategic
             Excellence.
           </motion.p>
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 100 }}
-            transition={{ duration: 0.8, ease: "easeIn", delay: 0.3 }}
+            // initial={{ opacity: 0 }}
+            // animate={{ opacity: 100 }}
+            // transition={{ duration: 0.8, ease: "easeIn", delay: 0.3 }}
             className="w-[70%] max-smd:w-full"
           >
             Global Liquidity, Personal Integrity. Unlock the Power of Digital
@@ -82,9 +82,9 @@ const HomeHero = () => {
             decision is a step toward greater security and growth.
           </p> */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 100 }}
-            transition={{ duration: 0.8, ease: "easeIn", delay: 0.5 }}
+            // initial={{ opacity: 0 }}
+            // animate={{ opacity: 100 }}
+            // transition={{ duration: 0.8, ease: "easeIn", delay: 0.5 }}
             className="mt-[4rem]"
           >
             <Link

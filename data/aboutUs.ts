@@ -8,7 +8,7 @@ export const aboutUsPaths: AboutUsPath[] = [
   {
     date: "1955",
     year: 1955,
-    text: "VMZ Inc. founded with commitment to wealth protection",
+    text: "Blueledge asset partners founded with commitment to wealth protection",
   },
   {
     date: "1975",

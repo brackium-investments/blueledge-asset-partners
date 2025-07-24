@@ -16,8 +16,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Beacon Trades",
+  title: "Blueledge asset partners",
   description: "Giving you the best off your investment",
+  metadataBase: new URL("https://blueledge-asset-partners.vercel.app/"),
+  openGraph: {
+    description: "Giving you the best off your investment",
+    type: "website",
+    url: "https://blueledge-asset-partners.vercel.app/",
+    images: [
+      {
+        url: "https://blueledge.s3.us-east-2.amazonaws.com/uploads/logo-light+20.56.43.png",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

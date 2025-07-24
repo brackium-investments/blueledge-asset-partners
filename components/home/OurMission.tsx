@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { OurMissionBox, ourMissionBox } from "@/data/home";
 import React, { useState } from "react";
@@ -35,10 +36,10 @@ const OurMission = () => {
         <div className="">
           {ourMissionData.map((text: string, i: number) => (
             <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 100 }}
-              transition={{ duration: 0.4, ease: "easeIn", delay: i * 0.2 }}
-              viewport={{ once: true }}
+              // initial={{ opacity: 0 }}
+              // whileInView={{ opacity: 100 }}
+              // transition={{ duration: 0.4, ease: "easeIn", delay: i * 0.2 }}
+              // viewport={{ once: true }}
               key={text}
               className="text-black mb-[1rem]"
             >
@@ -49,10 +50,10 @@ const OurMission = () => {
         <ul className="flex flex-col mt-[1rem]">
           {solutions.map((text: string, i: number) => (
             <motion.li
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 100 }}
-              transition={{ duration: 0.4, ease: "easeIn", delay: i * 0.2 }}
-              viewport={{ once: true }}
+              // initial={{ opacity: 0 }}
+              // whileInView={{ opacity: 100 }}
+              // transition={{ duration: 0.4, ease: "easeIn", delay: i * 0.2 }}
+              // viewport={{ once: true }}
               key={text}
               className="flex items-center mb-[1rem]"
             >
