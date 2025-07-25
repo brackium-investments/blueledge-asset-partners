@@ -13,6 +13,8 @@ export const getDashboardDispatch =
     try {
       const res = await getDashboard(token);
 
+      console.log(res);
+
       dispatch(dashboardActions.setDashboardDetails(res.data.data));
     } catch (error) {
       console.log(error);

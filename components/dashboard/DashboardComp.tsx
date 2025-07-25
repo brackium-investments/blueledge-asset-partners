@@ -4,11 +4,11 @@ import { BsCashCoin } from "react-icons/bs";
 import formatAmount from "@/utils/formatAmount";
 import InvestorGraph from "@/components/dashboard/InvestorGraph";
 import { useAppSelector } from "@/hooks/state-hook";
+import LoanGraph from "./LoanGraph";
 
 const DashboardComp = () => {
-  const { availableBalance, totalDeposited, totalWithdrawn } = useAppSelector(
-    (state) => state.dashboard
-  );
+  const { availableBalance, totalDeposited, totalWithdrawn, totalBorrowed } =
+    useAppSelector((state) => state.dashboard);
 
   const data = [
     {
@@ -29,11 +29,17 @@ const DashboardComp = () => {
       bgcolor: "bg-red-100",
       iconColor: "text-red-700",
     },
+    {
+      title: "Total borrowed",
+      value: totalBorrowed,
+      bgcolor: "bg-[#FFE0B3]",
+      iconColor: "text-[#FF8C00]",
+    },
   ];
 
   return (
     <div className="w-full">
-      <div className="grid grid-cols-3 gap-[4rem] max-xl:gap-[3rem] max-md:gap-[2rem] max-smd:grid-cols-2">
+      <div className="grid grid-cols-4 gap-[2rem]  max-md:grid-cols-2">
         {data.map((item) => (
           <div
             key={item.title}
@@ -61,6 +67,9 @@ const DashboardComp = () => {
       </div>
       <div className="w-full  bg-white rounded-[1rem] shadow-md mt-[5rem] p-[3rem] mb-[3rem]">
         <InvestorGraph />
+      </div>
+      <div className="w-full  bg-white rounded-[1rem] shadow-md mt-[5rem] p-[3rem] mb-[3rem]">
+        <LoanGraph />
       </div>
     </div>
   );

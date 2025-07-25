@@ -83,7 +83,7 @@ const FoundationForm = () => {
         <InputComponent
           placeholder={"Enter amount to be donated"}
           type={"number"}
-          label="Amount (USDT BEP20)"
+          label="Amount (eqv in USD)"
           register={register}
           error={errors}
           name={"amountPaid"}

@@ -41,10 +41,10 @@ const InvestmentItem = ({
       val: `${roi ? roi : 0} %`,
     },
 
-    {
-      text: "payout available",
-      val: `$ ${payoutAvailable}`,
-    },
+    // {
+    //   text: "payout available",
+    //   val: `$ ${payoutAvailable}`,
+    // },
 
     {
       text: "payout date",
@@ -68,7 +68,7 @@ const InvestmentItem = ({
   };
 
   const isWithdrawalActive: boolean =
-    dateDiffInDays(new Date(data[3].val).getTime(), new Date().getTime()) < 0;
+    dateDiffInDays(new Date(data[2].val).getTime(), new Date().getTime()) < 0;
 
   return (
     <motion.div

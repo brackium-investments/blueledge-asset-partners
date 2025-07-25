@@ -1,10 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { getLoansDispatch } from "@/actions/loanActions";
 import LoanItem from "@/components/dashboard/apply-for-loan/LoanItem";
 import { useAppDispatch, useAppSelector } from "@/hooks/state-hook";
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
+import { RotatingLines } from "react-loader-spinner";
 
 export type LoanItemType = {
   _id: string;
@@ -47,7 +47,11 @@ export default function ApplyForLoanPage() {
   return (
     <main className=" font-nunito w-full">
       <section className=" rounded-br-lg rounded-bl-lg   flex w-full  flex-col  ">
-        {loans.length <= 0 ? (
+        {isLoading ? (
+          <div className="flex justify-center items-center w-full h-[calc(100vh-20rem)] mb-[2rem] bg-white rounded-[0.6rem]">
+            <RotatingLines width="25" strokeColor="orange" />
+          </div>
+        ) : loans.length <= 0 ? (
           <div className="w-full border border-secondary-1 rounded-[0.6rem] p-[3rem] text-center h-full ">
             <p>You have no loans!</p>
           </div>

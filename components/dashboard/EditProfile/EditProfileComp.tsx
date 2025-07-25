@@ -74,7 +74,7 @@ const EditProfileComp = () => {
           </div>
         </div>
       </section>
-      <section className="flex justify-between mt-[5rem] max-smd:mb-[2rem] p-[3rem] max-smd:p-[2rem]  rounded-lg bg-white ">
+      <section className="flex justify-between mt-[5rem]  mb-[2rem] p-[3rem] max-smd:p-[2rem]  rounded-lg bg-white ">
         <div className=" rounded-lg w-full smd:py-[2rem] px-[1.5rem] max-smd:px-0">
           <p className="text-[1.8rem] text-secondary-1 font-semibold mb-[1.5rem] uppercase">
             Update Info

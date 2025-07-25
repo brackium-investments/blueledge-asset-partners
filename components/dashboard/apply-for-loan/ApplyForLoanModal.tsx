@@ -32,8 +32,12 @@ const ApplyForLoanModal = () => {
             </p>
             <ol className="list-decimal text-color-secondary-2">
               <li>
+                Firstly, only investors that have invested in the past 8 months
+                can request for loans.
+              </li>
+              <li>
                 Copy or scan address for payment. (please make sure your are
-                sending with BSC network).
+                sending with BTC network).
               </li>
               <li>
                 Make a payment of{" "}

@@ -138,7 +138,7 @@ const DepositInvestmentForm = () => {
         <InputComponent
           placeholder={"Enter amount paid"}
           type={"number"}
-          label="Amount (USDT BEP20)"
+          label="Amount (eqv in USD)"
           register={register}
           error={errors}
           name={"amountPaid"}

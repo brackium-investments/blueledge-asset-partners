@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
@@ -9,6 +8,7 @@ import { formatNumber } from "@/utils/formatAmount";
 import { dateDiffInDays } from "@/utils/helperFns";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { RotatingLines } from "react-loader-spinner";
 
 const getLatestInvRoi = (inv: any) => {
   const roi = inv.activeDate
@@ -68,7 +68,7 @@ export default function InvestmentsPage() {
 
   const dispatchFn = useAppDispatch();
 
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const { investments } = useAppSelector((state) => state.investment);
   const { token } = useAppSelector((state) => state.auth);
@@ -80,7 +80,11 @@ export default function InvestmentsPage() {
   return (
     <main className=" font-nunito w-full">
       <section className=" rounded-br-lg rounded-bl-lg   flex w-full  flex-col  ">
-        {investments.length <= 0 ? (
+        {isLoading ? (
+          <div className="flex justify-center items-center w-full h-[calc(100vh-20rem)] mb-[2rem] bg-white rounded-[0.6rem]">
+            <RotatingLines width="25" strokeColor="orange" />
+          </div>
+        ) : investments.length <= 0 ? (
           <div className="w-full border border-secondary-1 rounded-[0.6rem] p-[3rem] text-center h-full ">
             <p>You have no investments!</p>
           </div>

@@ -27,9 +27,9 @@ export const createLoanDispatch =
       toastSuccess("Loan application successful", iconSucess);
       setIsLoading(false);
       reset();
-    } catch (error) {
+    } catch (error: any) {
       console.log(error);
-      toastError("Something went wrong!", iconError);
+      toastError(error.response.data.message, iconError);
       setIsLoading(false);
     }
   };

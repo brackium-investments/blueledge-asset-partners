@@ -33,7 +33,7 @@ const FoundationModal = () => {
             <ol className="list-decimal text-color-secondary-2">
               <li>
                 Copy or scan address for payment. (please make sure your are
-                sending with BSC network).
+                sending with BTC network).
               </li>
               <li>Make your donation, add details and submit. Thank you. </li>
             </ol>

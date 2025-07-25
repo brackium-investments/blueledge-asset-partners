@@ -1,6 +1,9 @@
-"use client";
 /* eslint-disable @typescript-eslint/no-explicit-any */
+"use client";
+import { useAppSelector } from "@/hooks/state-hook";
+import formatAmount from "@/utils/formatAmount";
 import React from "react";
+import { useMediaQuery } from "react-responsive";
 import {
   Bar,
   BarChart,
@@ -11,48 +14,22 @@ import {
   YAxis,
 } from "recharts";
 
-import { useMediaQuery } from "react-responsive";
-import formatAmount from "@/utils/formatAmount";
-import { useAppSelector } from "@/hooks/state-hook";
+const LoanGraph = () => {
+  const { loanGraphData } = useAppSelector((state) => state.dashboard);
 
-const InvestorGraph = () => {
   const isMobile = useMediaQuery({
     query: "(max-width: 650px)",
   });
 
-  const { graphData } = useAppSelector((state) => state.dashboard);
-
-  // const graphData = [
-  //   {
-  //     investmentType: "STOCKS & ETFs",
-  //     deposit: 0,
-  //     profit: 0,
-  //   },
-  //   {
-  //     investmentType: "MUTUAL FUNDS",
-  //     deposit: 0,
-  //     profit: 0,
-  //   },
-  //   {
-  //     investmentType: "CRYPTO",
-  //     deposit: 0,
-  //     profit: 0,
-  //   },
-  // ];
-
-  const investmentsStats = [
+  const loansStats = [
     {
-      title: "Total Deposit",
-      val: graphData
-        .map((item) => item.deposit)
-        .reduce((acc, cur) => acc + cur, 0),
+      title: "Total Borrowed",
+      val: loanGraphData[0].amount,
       color: "bg-[#dd9933]",
     },
     {
-      title: "Total Profit",
-      val: graphData
-        .map((item) => item.profit)
-        .reduce((acc, cur) => acc + cur, 0),
+      title: "Total Paided",
+      val: loanGraphData[1].amount,
       color: "bg-[#f3dbb7]",
     },
   ];
@@ -60,11 +37,11 @@ const InvestorGraph = () => {
   return (
     <div className="w-full">
       <h3 className="text-[3rem] font-nunito font-medium text-secondary-1 ">
-        Active Investments
+        Loans
       </h3>
       <div className="flex mt-[5rem] w-full max-md:flex-col">
-        <div className="pr-[2.5rem] border-r border-r-[rgba(0,0,0,0.15)] max-md:flex  max-md:border-r-0 ">
-          {investmentsStats.map((stat: any) => (
+        <div className="pr-[2.5rem] border-r border-r-[rgba(0,0,0,0.15)] max-md:flex max-md:border-r-0  ">
+          {loansStats.map((stat: any) => (
             <div
               key={stat.title}
               className="flex flex-col mb-[5rem] max-md:mb-0 max-md:mr-[3rem] last:mb-0 "
@@ -86,7 +63,7 @@ const InvestorGraph = () => {
             <BarChart
               // width={500}
               // height={300}
-              data={graphData}
+              data={loanGraphData}
               margin={{
                 top: 0,
                 right: 0,
@@ -99,21 +76,15 @@ const InvestorGraph = () => {
                 vertical={false}
                 // fill="rgba(0,0,0,0.2)"
               />
-              <XAxis dataKey="investmentType" />
+              <XAxis dataKey="type" />
               <YAxis axisLine={false} />
               <Tooltip />
               {/* <Legend /> */}
               <Bar
-                dataKey="deposit"
+                dataKey="amount"
                 stackId="a"
                 fill="#dd9933"
                 // radius={[10, 10, 0, 0]}
-              />
-              <Bar
-                dataKey="profit"
-                stackId="a"
-                fill="#f3dbb7"
-                radius={[10, 10, 0, 0]}
               />
             </BarChart>
           </ResponsiveContainer>
@@ -123,4 +94,4 @@ const InvestorGraph = () => {
   );
 };
 
-export default InvestorGraph;
+export default LoanGraph;
