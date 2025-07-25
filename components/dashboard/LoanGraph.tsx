@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useAppSelector } from "@/hooks/state-hook";
-import formatAmount from "@/utils/formatAmount";
+import formatAmount, { formatNumber } from "@/utils/formatAmount";
 import React from "react";
 import { useMediaQuery } from "react-responsive";
 import {
@@ -67,7 +67,7 @@ const LoanGraph = () => {
               margin={{
                 top: 0,
                 right: 0,
-                left: isMobile ? -35 : 0,
+                left: isMobile ? 0 : 0,
                 bottom: 0,
               }}
             >
@@ -77,7 +77,11 @@ const LoanGraph = () => {
                 // fill="rgba(0,0,0,0.2)"
               />
               <XAxis dataKey="type" />
-              <YAxis axisLine={false} />
+              <YAxis
+                axisLine={false}
+                tickFormatter={(value) => `$${formatNumber(value)}`}
+                tick={{ fill: "#555335" }}
+              />
               <Tooltip />
               {/* <Legend /> */}
               <Bar

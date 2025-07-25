@@ -12,7 +12,7 @@ import {
 } from "recharts";
 
 import { useMediaQuery } from "react-responsive";
-import formatAmount from "@/utils/formatAmount";
+import formatAmount, { formatNumber } from "@/utils/formatAmount";
 import { useAppSelector } from "@/hooks/state-hook";
 
 const InvestorGraph = () => {
@@ -81,7 +81,7 @@ const InvestorGraph = () => {
             </div>
           ))}
         </div>
-        <div className="flex-1 h-[40rem] max-smd:h-[50rem]    ml-[5rem] max-md:ml-0 max-md:mt-[3rem]">
+        <div className="flex-1 h-[40rem] max-smd:h-[50rem]    ml-[5rem] max-md:ml-0  max-md:mt-[3rem]">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
               // width={500}
@@ -90,7 +90,7 @@ const InvestorGraph = () => {
               margin={{
                 top: 0,
                 right: 0,
-                left: isMobile ? -35 : 0,
+                left: isMobile ? 0 : 0,
                 bottom: 0,
               }}
             >
@@ -100,7 +100,11 @@ const InvestorGraph = () => {
                 // fill="rgba(0,0,0,0.2)"
               />
               <XAxis dataKey="investmentType" />
-              <YAxis axisLine={false} />
+              <YAxis
+                axisLine={false}
+                tickFormatter={(value) => `$${formatNumber(value)}`}
+                tick={{ fill: "#555335" }}
+              />
               <Tooltip />
               {/* <Legend /> */}
               <Bar
@@ -111,9 +115,9 @@ const InvestorGraph = () => {
               />
               <Bar
                 dataKey="profit"
-                stackId="a"
+                stackId="b"
                 fill="#f3dbb7"
-                radius={[10, 10, 0, 0]}
+                // radius={[10, 10, 0, 0]}
               />
             </BarChart>
           </ResponsiveContainer>
