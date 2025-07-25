@@ -18,7 +18,7 @@ const ApplyForLoanModal = () => {
 
         <div className="flex flex-col w-full p-[3rem] max-smd:p-[1.5rem]">
           <p className="text-secondary-1 font-medium text-center mt-[2rem] text-[1.8rem]">
-            USDT (BEP20)
+            BTC Network
           </p>
           <div className="flex w-full items-center justify-center mt-[3rem]">
             <QrCode />
