@@ -28,6 +28,7 @@ export const registerInvestorDispatch =
       toastSuccess("Created successfully", iconSucess);
       reset();
     } catch (error: any) {
+      console.log(error);
       setIsLoading(false);
       toastError(error.response.data.message, iconError);
     }
@@ -74,8 +75,6 @@ export const updateInvestorProfileImageDispatch =
   ) => {
     try {
       const res = await updateInvestorProfileImg(token, imgFile);
-
-      console.log(res);
 
       dispatchFn(investorActions.setInvestorDetails(res.data.data));
     } catch (error) {

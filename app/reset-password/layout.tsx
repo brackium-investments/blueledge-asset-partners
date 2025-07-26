@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Beacon Trades | Reset Password",
+  title: "Blueledge | Reset Password",
   description: "Giving you the best off your investment",
 };
 
