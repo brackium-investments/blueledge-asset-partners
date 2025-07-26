@@ -11,14 +11,14 @@ import {
 import { authActions } from "@/slices/authSlice";
 // import { dashboardActions } from "@/slices/dashboardSlice";
 import { investorActions } from "@/slices/investorSlice";
-import { ReactNode } from "react";
+import { Dispatch, ReactNode, SetStateAction } from "react";
 
 let logoutTimer: any;
 
 export const userLoginDispatch =
   (
     userData: { email: string; password: string },
-    setIsLoading: Function,
+    setIsLoading: Dispatch<SetStateAction<boolean>>,
     toastSuccess: any,
     toastError: any,
     iconSucess: ReactNode,
